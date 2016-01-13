@@ -1,0 +1,15 @@
+﻿Invoice for {{Date}}
+
+
+
+{{Itembought}} 
+
+Total:
+{{MainTotalMoneySpent}}
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

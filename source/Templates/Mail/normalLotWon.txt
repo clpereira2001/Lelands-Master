@@ -1,0 +1,11 @@
+﻿Lot won
+Dear {{loginName}}.
+
+You have successfully placed your bid on  lot # {{auctionID}}
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

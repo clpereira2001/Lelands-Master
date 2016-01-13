@@ -1,0 +1,23 @@
+﻿Winning Auction Notification Lot# {{auctionID}}
+
+DO NOT RESPOND TO THIS MESSAGE DIRECTLY AS YOUR MESSAGE
+WILL BE RETURNED. IF YOU HAVE RECEIVED THIS MESSAGE IN
+ERROR, PLEASE CONTACT US AT THE ADDRESS SPECIFIED BELOW.
+
+Congratulations! 
+
+{{firstName}} {{lastName}},
+
+You are the winning bidder for Lot #{{auctionID}} - "{{auctionName}}"
+
+Your bid was in the amount of: {{usersbid}}
+
+Don not pay anything until you receive your invoice which you will get in an email as well the US Mail.
+You can also preview your invoice online in your account.
+
+Thank you for participating in our auction,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+Copyright {{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

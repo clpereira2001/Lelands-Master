@@ -1,0 +1,50 @@
+﻿ Invoice for the {{auctionenddate}},  Catalogue Auction
+<html>
+	<head>
+	  <title>
+	     Invoice for the {{auctionenddate}},  Catalogue Auction
+	  </title>
+  </head>
+	<body style="font-family: Arial, Helvetica, sans-serif; font-size:12px">		
+	  <div style='width:750px; border:solid 1px #888888; padding: 10px 10px 20px 20px; background-color:#EFEFEF'>
+			<p>
+				Hello {{firstName}} {{lastName}}, Congratulation you won!<br />
+				Here is your invoice for the {{auctionenddate}}, Catalogue Auction. If you have any questions regarding this invoice, please contact our customer service at 631-244-0077. 
+				</p><p>
+				You can preview your invoice online under your account information.<br />
+				In addition, a hard copy has also been mailed to your billing address.
+			</p><p>
+				Thank you for participating in another great Lelands.com auction.
+			</p>
+      <br />
+			Follow this link to <a href='{{siteUrl}}/Account/InvoiceDetailed/{{UserInvoice_ID}}/{{EventURL}}' >preview your online invoice</a><br />
+			<br />
+
+			Invoice ID:&nbsp;&nbsp;<u>&nbsp;{{UserInvoice_ID}}&nbsp;</u>&nbsp;&nbsp;&nbsp;
+			Invoice Date:&nbsp;&nbsp;<u>&nbsp;{{SaleDate}}&nbsp;</u>
+			<br /><br />
+			<table border="0" cellpadding="0" cellspacing="0"  width="100%" > 
+      <tr style="background-color: #D2D2D2" class="bordered">
+        <th style="padding-left:10px; width:30p; border:1px solid #444">
+          Lot
+        </th>
+        <th style="width:600px; border:1px solid #444">
+          Title
+        </th>
+        <th style="width: 100px; border:1px solid #444">
+          Cost
+        </th>        
+      </tr>
+			{{info}}
+			<tr>
+      <td colspan="3">* Auction items include premium</td>      
+    </tr>    
+    </table>
+			<br />
+		<b>Due to the Christmas Holiday - shipping will not begin until December 27th.</b> <br /><br />
+		We accept personal checks, money orders, cash, and wire transfers. WE DO NOT ACCEPT CREDIT CARDS. If you have any questions, please contact customer service at 631-244-0077
+			<br /><br />
+			Copyright {{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}
+		</div>
+	</body>
+</html>

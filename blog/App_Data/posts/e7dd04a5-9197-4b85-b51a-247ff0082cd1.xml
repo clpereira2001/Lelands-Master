@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>joshevans</author>
+  <title>rasdasd as</title>
+  <description />
+  <content>&lt;p&gt;&amp;nbsp;asda sdas dasd asdas das dasd a&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-06-30 23:59:00</pubDate>
+  <lastModified>2011-06-30 23:59:32</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>rasdasd-as</slug>
+  <tags />
+  <comments>
+    <comment id="88504547-029f-485e-a1be-bb129736822e" parentid="00000000-0000-0000-0000-000000000000" approved="True" spam="False" deleted="False">
+      <date>2011-07-01 00:03:16</date>
+      <author>fpv</author>
+      <email>fpv.temp01@gmail.com</email>
+      <country>us</country>
+      <ip>::1</ip>
+      <moderatedby>Rule:authenticated</moderatedby>
+      <avatar />
+      <content>sadasdasd</content>
+    </comment>
+    <comment id="4ad2a00d-98ad-48a5-8596-9cd420cadafc" parentid="88504547-029f-485e-a1be-bb129736822e" approved="True" spam="False" deleted="False">
+      <date>2011-07-01 00:03:25</date>
+      <author>fpv</author>
+      <email>fpv.temp01@gmail.com</email>
+      <country>us</country>
+      <ip>::1</ip>
+      <moderatedby>Rule:authenticated</moderatedby>
+      <avatar />
+      <content>asdasdasdasdasd</content>
+    </comment>
+  </comments>
+  <categories>
+    <category>c223353c-1aef-4a46-afd1-cb61ab1a792d</category>
+  </categories>
+  <notifications />
+</post>

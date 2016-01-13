@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets>
+  <widget id="42fcbe7c-2c9c-440a-bad9-65a94472fccc" title="My Account" showTitle="True">Administration</widget>
+  <widget id="fb38ecdd-5813-4d10-8c5f-8d901c7c731e" title="Search" showTitle="True">Search</widget>
+  <widget id="e47b0298-fdb8-43b2-9efe-382a350b5e81" title="Lelands.com" showTitle="True">LinkList</widget>
+  <widget id="0b5f6ba5-5579-41de-b98f-e9849dfba29a" title="Recent Posts" showTitle="True">RecentPosts</widget>
+  <widget id="ab2b8c27-02c4-46ab-a78f-28939c2a1a09" title="Post Archive" showTitle="True">Month List</widget>
+</widgets>

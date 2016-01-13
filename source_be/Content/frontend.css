@@ -1,0 +1,25 @@
+﻿body{color:#000;margin:0 auto;font-family:Arial,Helvetica,sans-serif;font-size:100%;padding:20px 75px 20px 75px}
+img{border:0}
+a, a:active, a:visited{color:#6C0202;font-size:14px;text-decoration:none}
+a:hover{text-decoration:underline}
+.pay_notice{border:dotted 1px #800000;color:#800000;padding:5px 2px 5px 5px;margin:10px 0 10px 0;width: 740px;}
+.clear{clear:both;width:1px}
+#auction_detailed{background-color:#F0F0F0}
+.bordered{border:1px solid #818181;padding:5px;vertical-align:middle}
+.bordered a{vertical-align:middle}
+.center_content{font-size:14px;width:750px;padding:0;margin:0}
+.lot_title{color:#CB0405;font-size:16px;font-weight:bold}
+h4{color:#818181;font-size:14px;font-weight:bold}
+.lot_description{font-size:14px;background-color:#ADC0AE;text-align:justify;padding:10px}
+#featured{position:relative;background:#fff}
+#featured ul.ui-tabs-nav{position:absolute;top:0;left:600px;list-style:none;margin:0;padding:0 0 0 10px;width:130px}
+#featured ul.ui-tabs-nav li{padding:1px 0;padding-left:13px;font-size:12px;color:#666}
+#featured ul.ui-tabs-nav li img{margin:2px 5px;background:#fff;padding:2px;border:1px solid #eee;max-width:100px;max-height:120px}
+#featured li.ui-tabs-nav-item a{display:block;color:#333;background:#f2f2f2;text-align:center}
+#featured li.ui-tabs-nav-item{vertical-align:middle}
+#featured li.ui-tabs-nav-item a:hover{background:#dfdfdf;cursor:pointer}
+#featured li.ui-tabs-selected{background:url('/Zip/Image?path=/content/images/selected-item.gif') top left no-repeat}
+#featured ul.ui-tabs-nav li.ui-tabs-selected a{background:#ccc}
+#featured .ui-tabs-panel{width:595px;background:#fff;text-align:center;border:solid 1px #CCC;vertical-align:middle}
+#featured .ui-tabs-panel a img{max-width:590px}
+#featured .ui-tabs-hide{display:none}

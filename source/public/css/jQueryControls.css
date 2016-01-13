@@ -1,0 +1,7 @@
+﻿#featured{padding:0;margin:0}
+#featured .ui-tabs-panel,#featured .ui-tabs-panel-blank{width:502px;background:#fff;border:solid 1px #CCC;vertical-align:middle;padding:0;margin:0}
+#featured .ui-tabs-panel a{padding:0;margin:0;text-align:center;vertical-align:middle}
+#featured .ui-tabs-panel a img{max-width:502px;max-height:502px;padding:0;margin:0}
+#ad_images ul.ad_thumbnail{list-style:none;margin:0;padding:0}
+#ad_images ul.ad_thumbnail li img{margin:2px;background:#fff;padding:2px;border:1px solid #ddd;max-width:100px;max-height:120px}
+#ad_images ul.ad_thumbnail li img:hover{border:2px solid #AAA;cursor:pointer;margin:1px}

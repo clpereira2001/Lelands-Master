@@ -1,0 +1,16 @@
+Registration confirmation
+Greetings, {{firstName}} {{lastName}} !
+
+You have just registered on Lelands.com
+
+Your login: {{loginName}}
+
+To confirm your registration, please, use the following link : {{confirmUrl}}
+If you do not confirm your email address by clicking the link you will not become an active user.
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

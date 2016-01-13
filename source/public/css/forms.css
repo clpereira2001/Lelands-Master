@@ -1,0 +1,50 @@
+﻿.control .info,.control em{color:#FA3232}
+.control p br{height:1px;clear:both}
+.control span.field-validation-error{color:#FA3232;font-size:12px;padding-top:2px;margin-top:2px}
+.control h2, .center_content h2, #content h2{color:#518AAA;font-size:24px;font-weight:bold}
+.control h3{color:#518AAA;font-size:16px;font-weight:bold}
+.control p{font-size:14px;font-weight:bold}
+.control p button:hover, .control p input.button:hover{background-color:#9FD3E9}
+.control p input.chk{border:0 none;width:auto;padding:10px 0px 0px 0px}
+.control label{font-weight:bold;color:#111}
+.control p select, .control p input{padding:0;width:150px;border:solid 1px #580B01}   
+.blue_box{width:539px;margin-top:11px;padding: 5px 0 0 10px}
+.blue_box h2, .blue_box p{margin:0}
+.blue_box h3{color:#811302}
+#login_control{border:1px solid #818181;float:left;padding:10px}
+#login_control p{font-size:14px;font-weight:normal}
+#login_control a{font-weight:bold;font-size:12px}
+#login_control label.remember{font-size:12px;margin:0 10px 0 0;float:right}
+#login_control p input{float:right;margin-right:10px}
+#login_control p input.remember{border:0;padding:0}
+.center_content{font-size:14px;width:750px;padding:0;margin:0}
+.center_content, #registration{padding: 0 10px 0 10px;float:left}
+.center_content p{text-align:justify}
+#registration h2{margin-bottom:10px}
+#registration fieldset{border:0 none;margin: 0 0 20px 0}
+#registration .blue_box{background-image:none;padding:20px 0 10px;width:auto}
+#registration .blue_box label{font-size:12px}
+#registration p.info{margin-bottom:5px}
+#registration p.left{text-align:left;padding-left:60px;font-size:12px}
+#registration p{padding:0 75px 0 0;margin:0 0 5px 0;border:none;margin:5px 0 0 0 !important;padding: 0 !important;}
+#registration p span{color:#FA3232}
+#registration p strong span{font-style:italic}
+#registration fieldset input.mi{width:30px;margin-right:170px}
+#registration p select,#registration p input{width:190px}
+#registration p input.chk{width:auto}
+#registration label{display:block;width: 150px;float:left;margin-bottom:5px}
+#registration input{float:left}
+#registration .field-validation-error{margin-left:150px;display:block}
+.registration_phone_input{font-size:12px;font-weight:normal;line-height:normal;color:Maroon;display:none}
+#account_common p{text-align:left;font-size:14px;text-indent:43px;margin-bottom:10px}
+#account_common h2{font-weight:normal}
+#account_common ul{list-style:none none}
+#account_common li{padding-left:20px;margin-bottom:10px;font-size:14px}
+#account_common li:hover{background:url('/Zip/Image?path=/public/images/li_selected_bg.png') no-repeat left center}
+.right_column{float:right;margin:5px 0 5px 5px}
+.left_column {float:left;margin:5px 5px 5px 0}
+.right_column, .left_column{width:357px;padding:10px !important;border: 1px solid #C0C0C0}
+.right_column h3, .left_column h3{text-align:center}
+em{color:#BE0405}
+.text_center{text-align:center}
+.page_box{padding-right:5px;font-size:12px;text-align:center;vertical-align:middle}

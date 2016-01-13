@@ -1,0 +1,67 @@
+﻿body{background-color:#5c87b2;font-size:.75em;font-family:Verdana,Helvetica,Sans-Serif;margin:0;padding:0;color:#696969}
+a:link{color:#034af3;text-decoration:underline}
+a:visited{color:#505abc}
+a:hover{color:#1d60ff;text-decoration:none}
+a:active{color:#12eb87}
+p,ul{margin-bottom:20px;line-height:1.6em}
+h1,h2,h3,h4,h5,h6{font-size:1.5em;color:#10094C;font-family:Arial,Helvetica,sans-serif}
+h1{font-size:2em;padding-bottom:0;margin-bottom:0}
+h2{padding:5px 0px 5px 0px}
+h3{font-size:1.2em}
+h4{font-size:1.1em}
+h5,h6{font-size:1em}
+.rightColumn > h1,.rightColumn > h2,.leftColumn > h1,.leftColumn > h2{margin-top:0}
+.page{width:96%;margin-left:auto;margin-right:auto}
+#header{position:relative;margin-bottom:0px;color:#000;padding:0}
+#header h1{font-weight:bold;padding:5px 0;margin:0;color:#fff;border:none;line-height:2em;font-family:Arial,Helvetica,sans-serif;font-size:32px !important}
+#menucontainer{margin-top:10px}
+#main{padding:20px 20px 15px 20px;background-color:#fff;margin-bottom:20px;_height:1px}
+#footer{color:#999;padding:10px 0;text-align:center;line-height:normal;margin:0;font-size:.9em}
+fieldset{margin:1em 0;padding:1em;border:1px solid #CCC}
+fieldset p{margin:2px 12px 10px 10px}
+fieldset label{display:block}
+fieldset label.inline{display:inline}
+legend{font-size:1.1em;font-weight:600;padding:2px 4px 8px 4px}
+fieldset label em{color:Maroon;font-size:small}
+fieldset input[type="text"]{width:200px;border:1px solid #CCC}
+fieldset input[type="password"]{width:200px;border:1px solid #CCC}
+fieldset select{width:200px;border:1px solid #CCC}
+fieldset select optgroup{font-weight:bold;color:Navy;font-style:normal}
+table{border:solid 1px #e8eef4;border-collapse:collapse}
+table td{padding:5px;border:solid 1px #e8eef4}
+table th{padding:6px 5px;text-align:left;background-color:#e8eef4;border:solid 1px #e8eef4}
+#tblSchema td{vertical-align:top}
+.clear{clear:both}
+.error{color:Red}
+div#title{display:block;float:left;text-align:left}
+#logindisplay{font-size:1.1em;display:block;text-align:right;margin:10px;color:White}
+#logindisplay a:link{color:white;text-decoration:underline}
+#logindisplay a:visited{color:white;text-decoration:underline}
+#logindisplay a:hover{color:white;text-decoration:none}
+.field-validation-error{color:#ff0000}
+.input-validation-error{border:1px solid #ff0000;background-color:#ffeeee}
+.validation-summary-errors{font-weight:bold;color:#ff0000}
+.dialog_text{width:200px;cursor:pointer;font-weight:normal;padding-left:5px;border:solid 1px #c5dbec;background-color:#FFF}
+.dialog_text:hover{border:solid 1px #79b7e7;background-color:#dfeffc}
+.reset_text{margin-left:-3px}
+.dialog_form{padding:0;margin:0}
+.dialog_form fieldset{background-color:#f6f6f6}
+.dialog_form fieldset label{font-weight:normal;font-size:smaller}
+.dialog_form fieldset p{margin:2px 12px 5px 10px}
+.dialog_form table{margin:-10px}
+.dialog_form .dialog_form_tabs{margin:0}
+#form_consignor_tabs button{font-size:80%;font-weight:normal}
+#form_event_tabs ul li a,#form_consignor_tabs ul li a,#form_user_tabs ul li a,#form_auction_tabs ul li a,#form_auction_bidding_tabs ul li a,#form_dow_tabs ul li a{font-size:80%}
+#form_consignor_tabs-2,#form_consignor_tabs-4,#form_auction_tabs-3,#form_auction_bidding_tabs-1,#form_auction_bidding_tabs-2,#form_dow_tabs-3{padding:10px}
+#form_consignor_tabs-2 table,#form_consignor_tabs-4 table,#form_auction_tabs-3 table,#form_auction_bidding_tabs-1 table,#form_auction_bidding_tabs-2 table,#form_dow_tabs-3 table{margin:0px}
+#buyer_form fieldset input[type="text"],#buyer_form fieldset textarea,#seller_form fieldset input[type="text"],fieldset textarea{width:300px;border:1px solid #CCC}
+#buyer_form fieldset label,#seller_form fieldset label{width:150px}
+/*#report table{border:solid 0px black}
+#report table td{padding:1px;border:solid 0px black}
+#report table th{padding:3px;text-align:left;background-color:#e8eef4;border:solid 0px black}*/
+.dialog_form .printing_form{margin:0px}
+.dialog_form #printingLabels{margin:0px}
+#printingLabels{table-layout:fixed}
+fieldset #printingLabels input[type="text"]{width:40px;border:1px solid #CCC}
+#form_consignor_accordion h3 a{font-size:12px}
+#form_consignor_accordion div{padding:10px 0;margin:0;width:700px}

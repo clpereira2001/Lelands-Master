@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="LelandsConnectionString-Web.config Connection String" description="LelandsConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=localhost\SQLEXPRESS;Initial Catalog=Lelands;Integrated Security=True;MultipleActiveResultSets=true;Connect Timeout=0" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Alan\\Desktop\\SPA_TFS\\esportsdna\\Lelands-Master\\Lelands\\Lelands-master\\source_be\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LelandsConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

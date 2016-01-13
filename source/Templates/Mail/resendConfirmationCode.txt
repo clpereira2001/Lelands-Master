@@ -1,0 +1,13 @@
+﻿Resend Confirmation Code
+Greetings, {{loginName}}
+
+You have just registered on {{siteUrl}}
+
+To confirm your registration, please, use the following link : {{confirmation}}
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

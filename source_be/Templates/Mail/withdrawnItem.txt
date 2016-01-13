@@ -1,0 +1,16 @@
+﻿The Lot# {{auctionID}} has been withdrawn
+
+DO NOT RESPOND TO THIS MESSAGE DIRECTLY AS YOUR MESSAGE
+WILL BE RETURNED. IF YOU HAVE RECEIVED THIS MESSAGE IN
+ERROR, PLEASE CONTACT US AT THE ADDRESS SPECIFIED BELOW.
+
+{{firstName}} {{lastName}},
+
+This email is sent to notify you that the Lot# {{auctionID}} - {{auctionName}} has been withdrawn from our auction
+
+Thank you for participating in our auction,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+Copyright {{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

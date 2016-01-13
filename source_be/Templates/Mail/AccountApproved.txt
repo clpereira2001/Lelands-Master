@@ -1,0 +1,13 @@
+﻿Account approval confirmation
+Greetings, {{firstName}} {{lastName}} !
+
+You have just approved and now you are able to participate in Lelands Auctions. Enjoy the site {{siteUrl}}!
+
+Your login: {{loginName}}
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

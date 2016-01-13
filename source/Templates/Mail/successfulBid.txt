@@ -1,0 +1,28 @@
+﻿Bid Confirmation for Lot {{lot}}
+DO NOT RESPOND TO THIS MESSAGE DIRECTLY AS YOUR MESSAGE
+WILL BE RETURNED. IF YOU HAVE RECEIVED THIS MESSAGE IN
+ERROR, PLEASE CONTACT US AT THE ADDRESS SPECIFIED BELOW.
+
+{{firstName}} {{lastName}},
+
+This message has been sent to confirm your bid has been placed for Lot# {{lot}}:
+"{{auctionName}}"
+
+Your bid was in the amount of: {{usersbid}}
+Your maximum bid was in the amount of: {{usersmaxbid}}
+
+This lot will close {{auctionEndDate}}
+
+To view this item, please visit the site at
+{{newBidUrl}}
+
+Please remember to return to the site and check your bids
+often. You will be notified via e-mail should you be outbid
+or win this item.
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+Copyright {{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

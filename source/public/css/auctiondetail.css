@@ -1,0 +1,127 @@
+.topPanel{height:20px;padding:5px}
+.breadcrumb,.navigation{float:left;font-size:14px}
+.navigation{width:250px;float:right;text-align: right;margin-right:10px}
+.navigation a{margin-left:10px}
+.content_new{padding:5px}
+.leftcolumn,.rightcolumn{float:left}
+.leftcolumn{width:510px}
+.rightcolumn{width:450px}
+
+.pay_notice
+{
+  font-size: 13px;
+  width: auto;
+}
+
+.details,.dateAuction{border-bottom:1px solid #ccc;overflow:hidden}
+.details{border-top: 1px solid #ccc}
+.dateAuction{text-align:center;padding: 5px 0;font-size: 13px;color:#880000}
+
+.rightdetails,.leftdetails,.leftInfo,.rightInfo{float:left;width: 47%;padding:5px 0}
+.rightdetails.bdr{border-left:1px solid #ccc}
+.leftdetails.bdr{border-right:1px solid #ccc}
+.leftdetails p{ font-size: 14px!important;margin:0}
+.rightdetails p span,.leftdetails p span{float: right;margin-right:10px}
+
+.leftdetails div{ font-size: 14px!important;margin: 0;display:block}
+.leftdetails div .span1{float: right;margin-right:10px}
+.leftdetails div .span2{float: left}
+.leftdetails div.clear{ height:0}
+
+.rightdetails{padding:5px}
+.leftdetails #lnkRBR{color:#800;cursor:pointer;font-size:12px;vertical-align:middle;text-decoration: underline}
+.leftdetails #lnkRBR img, .leftdetails #lnkRBR_loading img {margin:-2px 5px}
+.leftdetails #lnkRBR_loading{color:#800;font-size:12px}
+.rightdetails #pending{ text-align: center;color:#800}
+
+.itemdescription{height:25px;margin-top:10px}
+.itemdescription strong{float:left;color: #555;font-size:14px;font-family:'Verdana', Arial}
+
+.itemdescr{color:#444;font-size:12px;font-family:'Verdana', Arial}
+
+.productSocial {float: right;
+  width: 135px; }
+  .productSocial span {
+    text-indent: -9999px !important; }
+  .productSocial a {
+    width: 17px;
+    height: 20px;
+    margin-left: 2px;
+    padding: 0; }
+  .productSocial .addthis_button_email {
+    background: url("/public/images/socialSprite20x20.png") -42px 0 no-repeat; }
+    .productSocial .addthis_button_email:hover {
+      opacity: 1;
+      background-position: -42px -21px; }
+    .productSocial .addthis_button_email span, .productSocial .addthis_button_email .at15t_email {
+      background: none !important; }
+  .productSocial .addthis_button_facebook {
+    background: url("/public/images/socialSprite20x20.png") no-repeat; }
+    .productSocial .addthis_button_facebook:hover {
+      opacity: 1;
+      background-position: 0 -21px; }
+    .productSocial .addthis_button_facebook span, .productSocial .addthis_button_facebook .at15t_facebook {
+      background: none !important; }
+  .productSocial .addthis_button_twitter {
+    background: url("/public/images/socialSprite20x20.png") -21px 0 no-repeat; }
+    .productSocial .addthis_button_twitter:hover {
+      opacity: 1;
+      background-position: -21px -21px; }
+    .productSocial .addthis_button_twitter span, .productSocial .addthis_button_twitter .at15t_twitter {
+      background: none !important; }
+  .productSocial .addthis_button_print {
+    background: url("/public/images/socialSprite20x20.png") -63px 0 no-repeat; }
+    .productSocial .addthis_button_print:hover {
+      opacity: 1;
+      background-position: -63px -21px; }
+    .productSocial .addthis_button_print span {
+      background: none !important; }
+  .productSocial .addthis_button_pinterest_pinit {
+    background: url("/public/images/socialSprite20x20.png") -84px 0 no-repeat; }
+    .productSocial .addthis_button_pinterest_pinit:hover {
+      opacity: 1;
+      background-position: -84px -21px; }
+    .productSocial .addthis_button_pinterest_pinit span {
+      background: none !important; }
+
+
+    #bid td, #tbl_ad_bidding td{color: #555;font-size:13px;font-family:'Verdana', Arial}
+    #tbl_ad_bidding .bordered{border: none; border-top: 1px solid #ccc; border-bottom:1px solid #ccc}
+
+    .bidding_title{color: #555;font-size:14px;font-family: 'Verdana', Arial;font-weight: bold;margin-top:10px}
+
+
+.sliderpanel{font-family: 'Verdana', Arial;font-size: 10px;color:#880000;cursor: pointer;text-align: center;width:100%}
+.sliderpanel:hover{ text-decoration: underline}
+
+/*
+  .rightdetails,.leftdetails,.leftInfo,.rightInfo{float:left;width:47%;position:relative;height:100px}
+.rightdetails span,.leftdetails span,.leftInfo span,.leftInfo select,.leftInfo input{float:right;margin-right:10px}
+.rightdetails img,.leftdetails img{float:right}
+.rightdetails a,.leftdetails a{color:#cb0405;position:absolute;bottom:0}
+.leftdetails{border-right:1px solid #ccc;float:left;text-align:left}
+.leftdetails span{text-align:right}
+.leftdetails p{margin-bottom:3px}*/
+
+
+/*
+h1,p{padding:0;margin:0}
+h1{font-size:16px;color:#cb0405}
+.main{width:980px;margin:0 auto;border:1px solid #666;overflow:hidden}
+
+
+
+.titleProduct,
+.titleProduct h1,.details h1,.dateAuction h1{margin-bottom:5px}
+
+.dateAuction{text-align:center;color:#cb0405}
+.info p,.leftInfo p{margin-bottom:10px}
+.description{height:25px}
+.description strong{float:left}
+.description img{float:right}
+.bidding{float:left;padding:10px;width:960px}
+.bidding strong{width:100%;border-bottom:1px solid #ccc;display:block}
+.leftInfo,.rightInfo{height:auto}
+.leftInfo{border-right:1px solid #ccc}
+.bidding ul li{list-style: decimal}
+  */

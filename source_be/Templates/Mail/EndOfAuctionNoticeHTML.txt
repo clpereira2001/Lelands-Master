@@ -1,0 +1,42 @@
+﻿{{email_subject}}
+<html>
+<head runat="server">
+    <title>{{email_subject}}</title>
+		<style>
+			a{font-weight:bold;color:#6C0202}
+		</style>
+</head>
+<body>
+    <body style="font-family: Arial, Helvetica, sans-serif">
+		<div style="width:751px;height: 82px;">
+					<img src="http://www.lelands.com/public/images/email_banner.png" alt="" style="float:left" />				 
+		</div>
+	  <div style='width:740px; padding: 5px 10px; color:#222'>
+	    <h3 style="color:#6C0202">{{email_title}}</h3>
+        <p>
+          {{email_title_2}}
+        </p>
+				<br />
+				
+        {{invoices_info}}
+				
+				{{separator}}
+				
+				{{loserlots}}        
+        
+        <p>          
+          Thank you for participating in our auction and we hope you return to bid with us in the future. If you have questions or need assistance, please <a style='font-weight:bold;color:#6C0202' href="{{siteUrl}}/Home/ContactUs">contact us</a>.
+          <br /><br />
+          Sincerely,<br />
+        </p>
+    <p>
+			<b style='color:#6C0202'>{{siteName}}</b><br />
+			<span >laura@lelands.com</span><br />
+			<span >{{siteUrl}}</span><br />
+      <br />		
+			<center>{{CompanyName}}, {{CompanyAddress}}<br/>Copyright {{copyrightDate}}</center>
+		</p>
+		</div>
+	</body>
+</body>
+</html>

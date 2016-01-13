@@ -1,0 +1,19 @@
+﻿The Invoice for your winning bid(s).
+
+Seasons Greetings from Lelands!  
+
+Many thanks for your participation in our Annual Fall Catalog Auction.  It's customers like you that 
+guarantee the resounding success of our auctions, and this one was certainly no exception.  
+Enclosed is the invoice for your winning bid(s).  Your payment is due within 14 days, and may be made 
+by personal check, money order, bank check or wire transfer. We do not accept credit card payments.  
+If you have any questions, please do not hesitate to contact Lelands at (516) 409-9700.
+
+Also, please visit our new "For Sale" page on Lelands.com, where we are offering terrific sports memorabilia 
+to be purchased outright.  This page will be updated monthly, so check back often!  
+
+Have a very happy holiday season, and thank you again for being a Lelands customer.
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+Copyright {{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

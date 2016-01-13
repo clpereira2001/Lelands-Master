@@ -1,0 +1,11 @@
+﻿Account inactive confirmation
+Greetings, {{firstName}} {{lastName}}!
+
+Your account was inativated. 
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

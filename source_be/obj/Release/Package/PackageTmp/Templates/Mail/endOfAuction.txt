@@ -1,0 +1,19 @@
+﻿End of Auction Notice for Lot {{auctionID}}
+
+DO NOT RESPOND TO THIS MESSAGE DIRECTLY AS YOUR MESSAGE
+WILL BE RETURNED. IF YOU HAVE RECEIVED THIS MESSAGE IN
+ERROR, PLEASE CONTACT US AT THE ADDRESS SPECIFIED BELOW
+
+End of Auction Notice for Lot# {{auctionID}}:
+"{{auctionName}}"
+
+This email is sent as a courtesy to let you know that
+this auction has ended. Unfortunately, you were not a
+successful bidder.
+
+Thank you for participating in our auction,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+Copyright {{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

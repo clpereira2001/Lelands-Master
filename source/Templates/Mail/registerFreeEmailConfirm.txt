@@ -1,0 +1,13 @@
+Subscription confirmation
+Greetings, {{FirstName}} {{LastName}}
+
+You have just subscribed on free email alerts on Lelands.com
+
+To confirm your subscription, please, use the following link : {{Url}}
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

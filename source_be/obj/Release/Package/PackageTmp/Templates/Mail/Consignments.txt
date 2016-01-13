@@ -1,0 +1,23 @@
+Information about your consignment statement for the {{auctionenddate}},  Catalogue Auction
+
+DO NOT RESPOND TO THIS MESSAGE DIRECTLY AS YOUR MESSAGE
+WILL BE RETURNED. IF YOU HAVE RECEIVED THIS MESSAGE IN
+ERROR, PLEASE CONTACT US AT THE ADDRESS SPECIFIED BELOW.
+
+{{firstName}} {{lastName}},
+
+You can preview your consignment statement for the {{auctionenddate}}, Catalogue Auction online under your account information.
+In addition, a hard copy has also been mailed to your billing address.
+
+Follow this link to preview your online consignment statement
+{{siteUrl}}/Account/ConsignmentDetail/{{invoice_id}}/{{eventname}}
+
+Thank you for consigning to Lelands.com. 
+We are currently accepting consignments for Spring Catalog Auction.
+
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}
+Copyright {{copyrightDate}} {{CompanyName}}

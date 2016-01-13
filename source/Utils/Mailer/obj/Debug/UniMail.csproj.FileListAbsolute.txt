@@ -1,0 +1,4 @@
+C:\Users\Alan\Desktop\SPA_TFS\esportsdna\Lelands-Master\Lelands\Lelands-master\source\Utils\Mailer\bin\Debug\UniMail.dll
+C:\Users\Alan\Desktop\SPA_TFS\esportsdna\Lelands-Master\Lelands\Lelands-master\source\Utils\Mailer\bin\Debug\UniMail.pdb
+C:\Users\Alan\Desktop\SPA_TFS\esportsdna\Lelands-Master\Lelands\Lelands-master\source\Utils\Mailer\obj\Debug\UniMail.dll
+C:\Users\Alan\Desktop\SPA_TFS\esportsdna\Lelands-Master\Lelands\Lelands-master\source\Utils\Mailer\obj\Debug\UniMail.pdb

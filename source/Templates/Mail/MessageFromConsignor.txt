@@ -1,0 +1,7 @@
+﻿Message from consignor (from {{firstname}} {{lastname}})
+First Name: {{firstname}}
+Last Name: {{lastname}}
+Email: {{email}}
+Phone: {{phone}}
+Best time to call: {{best}}
+Description: {{description}}

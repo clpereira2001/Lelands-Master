@@ -1,0 +1,1821 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Lelands" Class="VauctionDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SONY-VAIO\SQL2012;Initial Catalog=Lelands;Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=0" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LelandsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ConfirmationCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsConfirmed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Member="UserStatus_ID" Storage="_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="false" />
+      <Column Name="UserType" Member="UserType_ID" Storage="_UserType" Type="System.Byte" DbType="TinyInt" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DateRegistered" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FailedAttempts" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LastAttempt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RecieveWeeklySpecials" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RecieveNewsUpdates" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Shipping_AddressCard_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Billing_AddressCard_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BillingLikeShipping" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRecievingBidConfirmation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRecievingOutBidNotice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRecievingLotSoldNotice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRecievingLotClosedNotice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MobilePhone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EveningPhone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DayPhone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EbayID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EbayFeedback" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TaxpayerID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDUserReference1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IDUserReference2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsModifyed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CommissionRate_ID" Type="System.Int32" DbType="Int Not null" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(2048)" CanBeNull="true" />
+      <Column Name="IsCatalog" Type="System.Boolean" DbType="bit not null" CanBeNull="false" />
+      <Column Name="IsPostCards" Type="System.Boolean" DbType="bit not null" CanBeNull="false" />
+      <Association Name="User_UserInvoice" Member="UserInvoices" ThisKey="ID" OtherKey="User_ID" Type="UserInvoice" />
+      <Association Name="User_Consignment" Member="Consignments" ThisKey="ID" OtherKey="User_ID" Type="Consignment" />
+      <Association Name="User_Category" Member="Categories" ThisKey="ID" OtherKey="Owner_ID" Type="Category" />
+      <Association Name="User_MainCategory" Member="MainCategories" ThisKey="ID" OtherKey="Owner_ID" Type="MainCategory" />
+      <Association Name="User_Auction" Member="Auctions" ThisKey="ID" OtherKey="Owner_ID" Type="Auction" />
+      <Association Name="User_Auction1" Member="EnteredAuctions" ThisKey="ID" OtherKey="EnteredBy" Type="Auction" />
+      <Association Name="User_BidWatch" Member="BidWatches" ThisKey="ID" OtherKey="User_ID" Type="BidWatch" />
+      <Association Name="User_CategoriesMap" Member="CategoriesMaps" ThisKey="ID" OtherKey="Owner_ID" Type="CategoriesMap" />
+      <Association Name="User_EventCategory" Member="EventCategories" ThisKey="ID" OtherKey="Owner_ID" Type="EventCategory" />
+      <Association Name="User_EventRegistration" Member="EventRegistrations" ThisKey="ID" OtherKey="User_ID" Type="EventRegistration" />
+      <Association Name="User_AuctionBiddingRight" Member="AuctionBiddingRights" ThisKey="ID" OtherKey="User_ID" Type="AuctionBiddingRight" />
+      <Association Name="User_Specialist" Member="Specialists" ThisKey="ID" OtherKey="User_ID" Type="Specialist" />
+      <Association Name="User_Invoice" Member="Invoices" ThisKey="ID" OtherKey="User_ID" Type="Invoice" />
+      <Association Name="User_Payment" Member="Payments" ThisKey="ID" OtherKey="User_ID" Type="Payment" />
+      <Association Name="User_AuctionResult" Member="AuctionResults" ThisKey="ID" OtherKey="User_ID" Type="AuctionResult" />
+      <Association Name="User_Bid" Member="Bids" ThisKey="ID" OtherKey="User_ID" Type="Bid" />
+      <Association Name="User_BidLog" Member="BidLogs" ThisKey="ID" OtherKey="User_ID" Type="BidLog" />
+      <Association Name="User_BidCurrent" Member="BidCurrents" ThisKey="ID" OtherKey="User_ID" Type="BidCurrent" />
+      <Association Name="User_BidLogCurrent" Member="BidLogCurrents" ThisKey="ID" OtherKey="User_ID" Type="BidLogCurrent" />
+      <Association Name="User_BidWatchCurrent" Member="BidWatchCurrents" ThisKey="ID" OtherKey="User_ID" Type="BidWatchCurrent" />
+      <Association Name="User_AuctionResultsCurrent" Member="AuctionResultsCurrents" ThisKey="ID" OtherKey="User_ID" Type="AuctionResultsCurrent" />
+      <Association Name="UserReference_User" Member="UserReference_1" ThisKey="IDUserReference1" OtherKey="IDReference" Type="UserReference" IsForeignKey="true" />
+      <Association Name="UserReference_User1" Member="UserReference_2" ThisKey="IDUserReference2" OtherKey="IDReference" Type="UserReference" IsForeignKey="true" />
+      <Association Name="UserStatus_User" Member="UStatus" ThisKey="UserStatus_ID" OtherKey="ID" Type="UserStatus" IsForeignKey="true" />
+      <Association Name="UserType_User" Member="UType" ThisKey="UserType_ID" OtherKey="ID" Type="UserType" IsForeignKey="true" />
+      <Association Name="AddressCard_User" Member="AddressCard_Billing" ThisKey="Billing_AddressCard_ID" OtherKey="ID" Type="AddressCard" IsForeignKey="true" />
+      <Association Name="AddressCard_User1" Member="AddressCard_Shipping" ThisKey="Shipping_AddressCard_ID" OtherKey="ID" Type="AddressCard" IsForeignKey="true" />
+      <Association Name="CommissionRate_User" Member="CommissionRate" ThisKey="CommissionRate_ID" OtherKey="RateID" Type="CommissionRate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserReferences" Member="UserReferences">
+    <Type Name="UserReference">
+      <Column Name="IDReference" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AuctionHouse" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LastBidPlaced" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UserReference_User" Member="Users" ThisKey="IDReference" OtherKey="IDUserReference1" Type="User" />
+      <Association Name="UserReference_User1" Member="Users1" ThisKey="IDReference" OtherKey="IDUserReference2" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Variable" Member="Variables">
+    <Type Name="Variable">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserInvoices" Member="UserInvoices">
+    <Type Name="UserInvoice">
+      <Column Name="Id" Member="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SaleDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsPaid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsSend" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Event_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="UserInvoice_Invoice" Member="Invoices" ThisKey="ID" OtherKey="UserInvoices_ID" Type="Invoice" />
+      <Association Name="UserInvoice_Payment" Member="Payments" ThisKey="ID" OtherKey="UserInvoices_ID" Type="Payment" />
+      <Association Name="User_UserInvoice" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="Event_UserInvoice" Member="Event" ThisKey="Event_ID" OtherKey="ID" Type="Event" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaymentType" Member="PaymentTypes">
+    <Type Name="PaymentType">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="PaymentType_Payment" Member="Payments" ThisKey="ID" OtherKey="PaymentType_ID" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Old_New_AuctionIDs" Member="Old_New_AuctionIDs">
+    <Type Name="Old_New_AuctionID">
+      <Column Name="ID_New" Type="System.Int64" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AuctionId" Type="System.Int64" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InventoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Old_New_AuctionID_Auction" Member="Auctions" ThisKey="ID_New,AuctionId" OtherKey="ID,Event_ID" Type="Auction" />
+      <Association Name="Auction_Old_New_AuctionID" Member="Auction" ThisKey="ID_New" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="Country_State" Member="States" ThisKey="ID" OtherKey="Country_ID" Type="State" />
+      <Association Name="Country_AddressCard" Member="AddressCards" ThisKey="ID" OtherKey="Country_ID" Type="AddressCard" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Consignments" Member="Consignments">
+    <Type Name="Consignment">
+      <Column Name="Id" Member="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Event_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ConsDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Specialist_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Consignment_Invoice" Member="Invoices" ThisKey="ID" OtherKey="Consignments_ID" Type="Invoice" />
+      <Association Name="Consignment_Payment" Member="Payments" ThisKey="ID" OtherKey="Consignments_ID" Type="Payment" />
+      <Association Name="Consignment_ConsignmentContract" Member="ConsignmentContract" ThisKey="ID" OtherKey="ConsignmentID" Type="ConsignmentContract" Cardinality="One" />
+      <Association Name="User_Consignment" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="Specialist_Consignment" Member="Specialist" ThisKey="Specialist_ID" OtherKey="ID" Type="Specialist" IsForeignKey="true" />
+      <Association Name="Event_Consignment" Member="Event" ThisKey="Event_ID" OtherKey="ID" Type="Event" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.State" Member="States">
+    <Type Name="State">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Country_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="State_AddressCard" Member="AddressCards" ThisKey="ID" OtherKey="State_ID" Type="AddressCard" />
+      <Association Name="Country_State" Member="Country" ThisKey="Country_ID" OtherKey="ID" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserStatuses" Member="UserStatus">
+    <Type Name="UserStatus">
+      <Column Name="Id" Member="ID" Storage="_Id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="UserStatus_User" Member="Users" ThisKey="ID" OtherKey="UserStatus_ID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTypes" Member="UserTypes">
+    <Type Name="UserType">
+      <Column Name="Id" Member="ID" Storage="_Id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="UserType_User" Member="Users" ThisKey="ID" OtherKey="UserType_ID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddressCard" Member="AddressCards">
+    <Type Name="AddressCard">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Country_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WorkPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="InternationalState" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="State_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="AddressCard_User" Member="Users" ThisKey="ID" OtherKey="Billing_AddressCard_ID" Type="User" />
+      <Association Name="AddressCard_User1" Member="Users1" ThisKey="ID" OtherKey="Shipping_AddressCard_ID" Type="User" />
+      <Association Name="Country_AddressCard" Member="Country" ThisKey="Country_ID" OtherKey="ID" Type="Country" IsForeignKey="true" />
+      <Association Name="State_AddressCard" Member="State1" ThisKey="State_ID" OtherKey="ID" Type="State" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Owner_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DateEntered" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Category_CategoriesMap" Member="CategoriesMaps" ThisKey="ID" OtherKey="Category_ID" Type="CategoriesMap" />
+      <Association Name="Category_EventCategory" Member="EventCategories" ThisKey="ID" OtherKey="Category_ID" Type="EventCategory" />
+      <Association Name="User_Category" Member="User" ThisKey="Owner_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MainCategories" Member="MainCategories">
+    <Type Name="MainCategory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Member="Title" Storage="_Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CatalogID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateEntered" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Owner_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="MainCategory_CategoriesMap" Member="CategoriesMaps" ThisKey="ID" OtherKey="MainCategory_ID" Type="CategoriesMap" />
+      <Association Name="MainCategory_EventCategory" Member="EventCategories" ThisKey="ID" OtherKey="MainCategory_ID" Type="EventCategory" />
+      <Association Name="User_MainCategory" Member="User" ThisKey="Owner_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Auction" Member="Auctions">
+    <Type Name="Auction">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Category_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsFeatured" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DateSold" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NotifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reserve" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Event_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AuctionType_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsBold" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Addendum" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="PulledOut" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Estimate" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsUnsold" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CommissionRate_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OldAuction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CopyNotes" Type="System.String" DbType="VarChar(2048)" CanBeNull="true" />
+      <Column Name="PhotoNotes" Type="System.String" DbType="VarChar(2048)" CanBeNull="true" />
+      <Column Name="PriorityDescription" Type="System.String" DbType="VarChar(13) NOT NULL" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LOA" Type="System.Boolean" DbType="Bit Not Null" CanBeNull="false" />
+      <Column Name="IsPrinted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EnteredBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ListedStep" Type="System.Byte" DbType="TINYINT NOT NULL" CanBeNull="false" />
+      <Column Name="ListedStepDescription" Type="System.String" DbType="VarChar(12) NOT NULL" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsPhotographed" Type="System.Boolean" DbType="BIT NOT NULL" CanBeNull="false" />
+      <Column Name="IsInLayout" Type="System.Boolean" DbType="BIT NOT NULL" CanBeNull="false" />
+      <Column Name="IsLimitDisabled" Type="System.Boolean" DbType="bit not null" CanBeNull="false" />
+      <Column Member="Catlog" Type="System.Int32" CanBeNull="false" />
+      <Association Name="Auction_Old_New_AuctionID" Member="Old_New_AuctionIDs" ThisKey="ID" OtherKey="ID_New" Type="Old_New_AuctionID" />
+      <Association Name="Auction_Auction" Member="Auction_Child" Storage="_Auctions" ThisKey="ID" OtherKey="OldAuction_ID" Type="Auction" />
+      <Association Name="Auction_Image" Member="Images" ThisKey="ID" OtherKey="Auction_ID" Type="Image" />
+      <Association Name="Auction_BidWatch" Member="BidWatches" ThisKey="ID" OtherKey="Auction_ID" Type="BidWatch" />
+      <Association Name="Auction_AuctionBiddingRight" Member="AuctionBiddingRights" ThisKey="ID" OtherKey="Auction_ID" Type="AuctionBiddingRight" />
+      <Association Name="Auction_Invoice" Member="Invoices" ThisKey="ID" OtherKey="Auction_ID" Type="Invoice" />
+      <Association Name="Auction_AuctionResult" Member="AuctionResults" ThisKey="ID" OtherKey="Auction_ID" Type="AuctionResult" />
+      <Association Name="Auction_Bid" Member="Bids" ThisKey="ID" OtherKey="Auction_ID" Type="Bid" />
+      <Association Name="Auction_BidLog" Member="BidLogs" ThisKey="ID" OtherKey="Auction_ID" Type="BidLog" />
+      <Association Name="Auction_BidCurrent" Member="BidCurrents" ThisKey="ID" OtherKey="Auction_ID" Type="BidCurrent" />
+      <Association Name="Auction_BidLogCurrent" Member="BidLogCurrents" ThisKey="ID" OtherKey="Auction_ID" Type="BidLogCurrent" />
+      <Association Name="Auction_AuctionExtended" Member="AuctionExtended" ThisKey="ID" OtherKey="Auction_ID" Type="AuctionExtended" Cardinality="One" />
+      <Association Name="Auction_BidWatchCurrent" Member="BidWatchCurrents" ThisKey="ID" OtherKey="Auction_ID" Type="BidWatchCurrent" />
+      <Association Name="Auction_AuctionResultsCurrent" Member="AuctionResultsCurrents" ThisKey="ID" OtherKey="Auction_ID" Type="AuctionResultsCurrent" />
+      <Association Name="Auction_AuctionTag" Member="AuctionTags" ThisKey="ID" OtherKey="AuctionID" Type="AuctionTag" />
+      <Association Name="Auction_AuctionCollection" Member="AuctionCollections" ThisKey="ID" OtherKey="AuctionID" Type="AuctionCollection" />
+      <Association Name="Auction_Auction" Member="Auction_Parent" Storage="_Auction1" ThisKey="OldAuction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+      <Association Name="User_Auction" Member="User" ThisKey="Owner_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="Old_New_AuctionID_Auction" Member="Old_New_AuctionID" ThisKey="ID,Event_ID" OtherKey="ID_New,AuctionId" Type="Old_New_AuctionID" IsForeignKey="true" />
+      <Association Name="User_Auction1" Member="EnteredByUser" ThisKey="EnteredBy" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="AuctionStatus_Auction" Member="AuctionStatus" Storage="_AuctionStatuse" ThisKey="Status" OtherKey="ID" Type="AuctionStatus" IsForeignKey="true" />
+      <Association Name="EventCategory_Auction" Member="EventCategory" ThisKey="Category_ID" OtherKey="ID" Type="EventCategory" IsForeignKey="true" />
+      <Association Name="Event_Auction" Member="Event" ThisKey="Event_ID" OtherKey="ID" Type="Event" IsForeignKey="true" />
+      <Association Name="CommissionRate_Auction" Member="CommissionRate" ThisKey="CommissionRate_ID" OtherKey="RateID" Type="CommissionRate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Image" Member="Images">
+    <Type Name="Image" Id="ID1">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="PicturePath" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ThumbNailPath" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Default]" Member="Default" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Order" Type="System.Int32" DbType="Int Not Null" CanBeNull="false" />
+      <Column Name="LargePath" Type="System.String" DbType="NVarchar(255) Not NUll" CanBeNull="false" />
+      <Column Name="UploadedFileName" Type="System.String" DbType="Varchar(100)" CanBeNull="false" />
+      <Column Name="isChecked" Type="System.Int32" CanBeNull="false" />
+      <Association Name="Auction_Image" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuctionStatuses" Member="AuctionStatus">
+    <Type Name="AuctionStatus">
+      <Column Name="Id" Member="ID" Storage="_Id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="AuctionStatus_Auction" Member="Auctions" ThisKey="ID" OtherKey="Status" Type="Auction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BidWatch" Member="BidWatches">
+    <Type Name="BidWatch">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_BidWatch" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+      <Association Name="User_BidWatch" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId1">
+      <Argument Parameter="iD" Member="ID" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+    </InsertFunction>
+  </Table>
+  <Table Name="dbo.CategoriesMap" Member="CategoriesMaps">
+    <Type Name="CategoriesMap">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MainCategory_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Descr" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Intro" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Owner_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CategoriesMap_EventCategory" Member="EventCategories" ThisKey="MainCategory_ID,Category_ID" OtherKey="MainCategory_ID,Category_ID" Type="EventCategory" />
+      <Association Name="Category_CategoriesMap" Member="Category" ThisKey="Category_ID" OtherKey="ID" Type="Category" IsForeignKey="true" />
+      <Association Name="MainCategory_CategoriesMap" Member="MainCategory" ThisKey="MainCategory_ID" OtherKey="ID" Type="MainCategory" IsForeignKey="true" />
+      <Association Name="User_CategoriesMap" Member="User" ThisKey="Owner_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventCategory" Member="EventCategories">
+    <Type Name="EventCategory">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Event_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Category_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="MainCategory_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descr" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Owner_Id" Member="Owner_ID" Storage="_Owner_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="EventCategory_Auction" Member="Auctions" ThisKey="ID" OtherKey="Category_ID" Type="Auction" />
+      <Association Name="Category_EventCategory" Member="Category" ThisKey="Category_ID" OtherKey="ID" Type="Category" IsForeignKey="true" />
+      <Association Name="MainCategory_EventCategory" Member="MainCategory" ThisKey="MainCategory_ID" OtherKey="ID" Type="MainCategory" IsForeignKey="true" />
+      <Association Name="User_EventCategory" Member="User" ThisKey="Owner_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="CategoriesMap_EventCategory" Member="CategoriesMap" ThisKey="MainCategory_ID,Category_ID" OtherKey="MainCategory_ID,Category_ID" Type="CategoriesMap" IsForeignKey="true" />
+      <Association Name="Event_EventCategory" Member="Event" ThisKey="Event_ID" OtherKey="ID" Type="Event" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventRegistration" Member="EventRegistrations">
+    <Type Name="EventRegistration" Id="ID4">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Event_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="User_EventRegistration" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuctionBiddingRights" Member="AuctionBiddingRights">
+    <Type Name="AuctionBiddingRight">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_AuctionBiddingRight" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_AuctionBiddingRight" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Specialists" Member="Specialists">
+    <Type Name="Specialist">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Specialist_Consignment" Member="Consignments" ThisKey="ID" OtherKey="Specialist_ID" Type="Consignment" />
+      <Association Name="User_Specialist" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Event" Member="Events">
+    <Type Name="Event" Id="ID2">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DateStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BuyerFee" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsViewable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsClickable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ordinary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CloseStep" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Type_ID" Type="System.Int32" DbType="int not null" CanBeNull="false" />
+      <Association Name="Event_UserInvoice" Member="UserInvoices" ThisKey="ID" OtherKey="Event_ID" Type="UserInvoice" />
+      <Association Name="Event_Consignment" Member="Consignments" ThisKey="ID" OtherKey="Event_ID" Type="Consignment" />
+      <Association Name="Event_Auction" Member="Auctions" ThisKey="ID" OtherKey="Event_ID" Type="Auction" />
+      <Association Name="Event_EventCategory" Member="EventCategories" ThisKey="ID" OtherKey="Event_ID" Type="EventCategory" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Invoice" Member="Invoices">
+    <Type Name="Invoice">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsPaid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsSent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UserInvoices_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LateFee" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Consignments_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Invoice_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Money" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Auction_Invoice" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+      <Association Name="Consignment_Invoice" Member="Consignment" ThisKey="Consignments_ID" OtherKey="ID" Type="Consignment" IsForeignKey="true" />
+      <Association Name="User_Invoice" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="UserInvoice_Invoice" Member="UserInvoice" ThisKey="UserInvoices_ID" OtherKey="ID" Type="UserInvoice" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PostDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentType_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="PaidDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UserInvoices_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsCleared" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClearedDetails" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Consignments_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Consignment_Payment" Member="Consignment" ThisKey="Consignments_ID" OtherKey="ID" Type="Consignment" IsForeignKey="true" />
+      <Association Name="PaymentType_Payment" Member="PaymentType" ThisKey="PaymentType_ID" OtherKey="ID" Type="PaymentType" IsForeignKey="true" />
+      <Association Name="User_Payment" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="UserInvoice_Payment" Member="UserInvoice" ThisKey="UserInvoices_ID" OtherKey="ID" Type="UserInvoice" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuctionResults" Member="AuctionResults">
+    <Type Name="AuctionResult" Id="ID3">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CurrentBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Bids" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Auction_AuctionResult" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_AuctionResult" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId2">
+      <Argument Parameter="iD" Member="ID" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="currentBid" Member="CurrentBid" />
+      <Argument Parameter="bids" Member="Bids" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId3">
+      <Argument Parameter="iD" Member="ID" Version="Original" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="currentBid" Member="CurrentBid" />
+      <Argument Parameter="bids" Member="Bids" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+    </UpdateFunction>
+  </Table>
+  <Table Name="dbo.Bid" Member="Bids">
+    <Type Name="Bid">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateMade" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="IsProxy" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_Bid" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+      <Association Name="User_Bid" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId4">
+      <Argument Parameter="iD" Member="ID" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="amount" Member="Amount" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+      <Argument Parameter="quantity" Member="Quantity" />
+      <Argument Parameter="dateMade" Member="DateMade" />
+      <Argument Parameter="iP" Member="IP" />
+      <Argument Parameter="isProxy" Member="IsProxy" />
+      <Argument Parameter="isActive" Member="IsActive" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId5">
+      <Argument Parameter="iD" Member="ID" Version="Original" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="amount" Member="Amount" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+      <Argument Parameter="quantity" Member="Quantity" />
+      <Argument Parameter="dateMade" Member="DateMade" />
+      <Argument Parameter="iP" Member="IP" />
+      <Argument Parameter="isProxy" Member="IsProxy" />
+      <Argument Parameter="isActive" Member="IsActive" />
+    </UpdateFunction>
+  </Table>
+  <Table Name="dbo.BidLog" Member="BidLogs">
+    <Type Name="BidLog">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateMade" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IsProxy" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsProxyRaise" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAutoBid" Type="System.Boolean" DbType="BIT NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_BidLog" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+      <Association Name="User_BidLog" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId6">
+      <Argument Parameter="iD" Member="ID" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="amount" Member="Amount" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+      <Argument Parameter="quantity" Member="Quantity" />
+      <Argument Parameter="dateMade" Member="DateMade" />
+      <Argument Parameter="iP" Member="IP" />
+      <Argument Parameter="isProxy" Member="IsProxy" />
+      <Argument Parameter="isProxyRaise" Member="IsProxyRaise" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId7">
+      <Argument Parameter="iD" Member="ID" Version="Original" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="amount" Member="Amount" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+      <Argument Parameter="quantity" Member="Quantity" />
+      <Argument Parameter="dateMade" Member="DateMade" />
+      <Argument Parameter="iP" Member="IP" />
+      <Argument Parameter="isProxy" Member="IsProxy" />
+      <Argument Parameter="isProxyRaise" Member="IsProxyRaise" />
+    </UpdateFunction>
+  </Table>
+  <Table Name="dbo.BidCurrent" Member="BidCurrents">
+    <Type Name="BidCurrent" Id="ID5">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateMade" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="IsProxy" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_BidCurrent" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+      <Association Name="User_BidCurrent" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId8">
+      <Argument Parameter="iD" Member="ID" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="amount" Member="Amount" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+      <Argument Parameter="quantity" Member="Quantity" />
+      <Argument Parameter="dateMade" Member="DateMade" />
+      <Argument Parameter="iP" Member="IP" />
+      <Argument Parameter="isProxy" Member="IsProxy" />
+      <Argument Parameter="isActive" Member="IsActive" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId9">
+      <Argument Parameter="iD" Member="ID" Version="Original" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="amount" Member="Amount" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+      <Argument Parameter="quantity" Member="Quantity" />
+      <Argument Parameter="dateMade" Member="DateMade" />
+      <Argument Parameter="iP" Member="IP" />
+      <Argument Parameter="isProxy" Member="IsProxy" />
+      <Argument Parameter="isActive" Member="IsActive" />
+    </UpdateFunction>
+  </Table>
+  <Table Name="dbo.BidLogCurrent" Member="BidLogCurrents">
+    <Type Name="BidLogCurrent">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateMade" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="IsProxy" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsProxyRaise" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAutoBid" Type="System.Boolean" DbType="BIT NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_BidLogCurrent" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+      <Association Name="User_BidLogCurrent" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId10">
+      <Argument Parameter="iD" Member="ID" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="amount" Member="Amount" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+      <Argument Parameter="quantity" Member="Quantity" />
+      <Argument Parameter="dateMade" Member="DateMade" />
+      <Argument Parameter="iP" Member="IP" />
+      <Argument Parameter="isProxy" Member="IsProxy" />
+      <Argument Parameter="isProxyRaise" Member="IsProxyRaise" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId11">
+      <Argument Parameter="iD" Member="ID" Version="Original" />
+      <Argument Parameter="auction_ID" Member="Auction_ID" />
+      <Argument Parameter="user_ID" Member="User_ID" />
+      <Argument Parameter="amount" Member="Amount" />
+      <Argument Parameter="maxBid" Member="MaxBid" />
+      <Argument Parameter="quantity" Member="Quantity" />
+      <Argument Parameter="dateMade" Member="DateMade" />
+      <Argument Parameter="iP" Member="IP" />
+      <Argument Parameter="isProxy" Member="IsProxy" />
+      <Argument Parameter="isProxyRaise" Member="IsProxyRaise" />
+    </UpdateFunction>
+  </Table>
+  <Table Name="dbo.HotNews" Member="HotNews">
+    <Type Name="HotNew">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="NewsDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="IsOnlyHP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImagePath" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuctionType" Member="AuctionTypes">
+    <Type Name="AuctionType">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OuterSubscription" Member="OuterSubscriptions">
+    <Type Name="OuterSubscription">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IsRecievingWeeklySpecials" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRecievingUpdates" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HomepageImages" Member="HomepageImages">
+    <Type Name="HomepageImage" Id="ID6">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ImgFileName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ImgOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="LinkTitle" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImgType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurchasedTypes" Member="PurchasedTypes">
+    <Type Name="PurchasedType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="PurchasedType_AuctionExtended" Member="AuctionExtendeds" ThisKey="ID" OtherKey="PurchasedWay" Type="AuctionExtended" />
+      <Association Name="PurchasedType_AuctionExtended1" Member="AuctionExtendeds1" ThisKey="ID" OtherKey="SoldWay" Type="AuctionExtended" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuctionExtended" Member="AuctionExtendeds">
+    <Type Name="AuctionExtended">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PurchasedPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PurchasedWay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoldPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SoldWay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Auction_AuctionExtended" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PurchasedType_AuctionExtended" Member="PurchasedWayType" ThisKey="PurchasedWay" OtherKey="ID" Type="PurchasedType" IsForeignKey="true" />
+      <Association Name="PurchasedType_AuctionExtended1" Member="SoldWayType" ThisKey="SoldWay" OtherKey="ID" Type="PurchasedType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BidWatchCurrent" Member="BidWatchCurrents">
+    <Type Name="BidWatchCurrent">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_BidWatchCurrent" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" />
+      <Association Name="User_BidWatchCurrent" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuctionResultsCurrent" Member="AuctionResultsCurrents">
+    <Type Name="AuctionResultsCurrent">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CurrentBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Bids" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Auction_AuctionResultsCurrent" Member="Auction" ThisKey="Auction_ID" OtherKey="ID" Type="Auction" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_AuctionResultsCurrent" Member="User" ThisKey="User_ID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CommissionRate" Member="CommissionRates">
+    <Type Name="CommissionRate">
+      <Column Name="RateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RateCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Highbid" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Reserve" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Overage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MaxPercent" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MinPercent" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Highbid2" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddlePercent" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Association Name="CommissionRate_User" Member="Users" ThisKey="RateID" OtherKey="CommissionRate_ID" Type="User" />
+      <Association Name="CommissionRate_Auction" Member="Auctions" ThisKey="RateID" OtherKey="CommissionRate_ID" Type="Auction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConsignmentContracts" Member="ConsignmentContracts">
+    <Type Name="ConsignmentContract">
+      <Column Name="ConsignmentID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractText" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Association Name="Consignment_ConsignmentContract" Member="Consignment" ThisKey="ConsignmentID" OtherKey="ID" Type="Consignment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuctionTags" Member="AuctionTags">
+    <Type Name="AuctionTag">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AuctionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TagID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_AuctionTag" Member="Auction" ThisKey="AuctionID" OtherKey="ID" Type="Auction" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Tag_AuctionTag" Member="Tag" ThisKey="TagID" OtherKey="ID" Type="Tag" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tags" Member="Tags">
+    <Type Name="Tag">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="IsSystem" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsViewable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Tag_AuctionTag" Member="AuctionTags" ThisKey="ID" OtherKey="TagID" Type="AuctionTag" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuctionCollections" Member="AuctionCollections">
+    <Type Name="AuctionCollection">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AuctionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CollectionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Auction_AuctionCollection" Member="Auction" ThisKey="AuctionID" OtherKey="ID" Type="Auction" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Collection_AuctionCollection" Member="Collection" ThisKey="CollectionID" OtherKey="ID" Type="Collection" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Collections" Member="Collections">
+    <Type Name="Collection">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="WebTitle" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Association Name="Collection_AuctionCollection" Member="AuctionCollections" ThisKey="ID" OtherKey="CollectionID" Type="AuctionCollection" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_Event_Close" Method="sp_Event_Close">
+    <Parameter Name="EventID" Parameter="eventID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsFirstStep" Parameter="isFirstStep" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetBiddingStatistic" Method="sp_GetBiddingStatistic">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="sp_GetBiddingStatisticResult">
+      <Column Name="WithoutBids" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OneBid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MoreThanOneBid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetUsersList" Method="sp_GetUsersList">
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="login" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="status" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="type" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="datein" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="commrate_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dayphone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="eveningphone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="isroot" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="orderby" Type="System.Byte" DbType="TinyInt" />
+    <ElementType Name="sp_GetUsersListResult">
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="BidderID" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Passw" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UserNameFull" Type="System.String" DbType="NVarChar(152)" CanBeNull="true" />
+      <Column Name="IsConfirmed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UStatus" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DateRegistered" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CommRate" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DayPhone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EveningPhone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(1090)" CanBeNull="true" />
+      <Column Name="ShippingAddress" Type="System.String" DbType="NVarChar(1090)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Auctions_DeleteAuction" Method="sp_Auctions_DeleteAuction">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Report_AuctionPaid" Method="sp_Report_AuctionPaid">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="sp_Report_AuctionPaidResult">
+      <Column Name="Login" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="FIO" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalDue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AmountDue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Event_SetCurrent" Method="sp_Event_SetCurrent">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Event_ChangeAuctionStartEnd" Method="sp_Event_ChangeAuctionStartEnd">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Event_EventRegistrationsList" Method="sp_Event_EventRegistrationsList">
+    <Parameter Name="evret_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="usertype" Type="System.Byte" DbType="TinyInt" />
+    <ElementType Name="sp_Event_EventRegistrationsListResult">
+      <Column Name="EventRegistrationID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Event" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DateRegistered" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Report_BuyerInvoices" Method="sp_Report_BuyerInvoices">
+    <Parameter Name="invoice_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="ispaid" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_Report_BuyerInvoicesResult">
+      <Column Name="InvoiceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EventTitle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserFN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LateFee" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="APaid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ADue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Report_ConsignorSettlement" Method="sp_Report_ConsignorSettlement">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="sp_Report_ConsignorSettlementResult">
+      <Column Name="Seller" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bid" Type="System.String" DbType="NVarChar(51) NOT NULL" CanBeNull="false" />
+      <Column Name="HighBid" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="TotalDue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Unpaid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ToConsignor" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CommissionDescription" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="eventtitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IsWin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetAuctionWinnerTable" Method="sp_GetAuctionWinnerTable">
+    <Parameter Name="AuctionID" Parameter="auctionID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsWinner" Parameter="isWinner" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetAuctionWinnerTableResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateMade" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="[Update]" Member="Update" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsReserveBid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsProxy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Report_DayPayments" Method="sp_Report_DayPayments">
+    <Parameter Name="datefrom" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateto" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_Report_DayPaymentsResult">
+      <Column Name="DateFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PostDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PaidDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Usr" Type="System.String" DbType="NVarChar(359)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spReport_PrintingConsignorStatements" Method="spReport_PrintingConsignorStatements">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="printeddate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="spReport_PrintingConsignorStatementsResult">
+      <Column Name="ConsStatement_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EventEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EventTitle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PrintedDate" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillingName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillingAddress1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillingAddress2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillingCity" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillingState" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BillingZip" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BillingCountry" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="CommRate" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WinBid" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ConsigmentTotal" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="PaymentToDate" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Pending" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="PaymentEnclosed" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spReport_SalesTax" Method="spReport_SalesTax">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spReport_SalesTaxResult">
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="FIO" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EvTitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAuction_View_Consignments" Method="spAuction_View_Consignments">
+    <Parameter Name="cons_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="login" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="flname" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="consdate" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="spec" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="sort" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="orderby" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spAuction_View_ConsignmentsResult">
+      <Column Name="Consignment_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FLName" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Event" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ConsDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Specialist" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAuction_GetAuctionImages" Method="spAuction_GetAuctionImages">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spReport_ConsignorsVsLelands" Method="spReport_ConsignorsVsLelands">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spReport_ConsignorsVsLelandsResult">
+      <Column Name="Consignment_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(513) NOT NULL" CanBeNull="false" />
+      <Column Name="SellerName" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="ItemsQTY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnsoldQTY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WinBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ToConsignor" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LelandsEarned" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EventTitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCategory_View_CategoryByMCandE" Method="spCategory_View_CategoryByMCandE">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="maincategory_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cat_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sort" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="orderby" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spCategory_View_CategoryByMCandEResult">
+      <Column Name="EventCategory_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Category_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CategoryTitle" Type="System.String" DbType="VarChar(510)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUser_View_BuyerSellers" Method="spUser_View_BuyerSellers">
+    <Parameter Name="usersearchtype" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="login" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="fn" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="phone" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sort" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="order" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spUser_View_BuyerSellersResult">
+      <Column Name="User_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(510)" CanBeNull="true" />
+      <Column Name="FLName" Type="System.String" DbType="VarChar(220)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(510)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CommissionRate_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserType" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="UserStatus" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInvoice_View_InvoicesByUI" Method="spInvoice_View_InvoicesByUI">
+    <Parameter Name="userinvoice_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="cost" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="shipping" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="tax" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="totalcost" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="latefee" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="balance" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spInvoice_View_InvoicesByUIResult">
+      <Column Name="Invoice_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LateFee" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsSent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInvoice_View_Payments" Method="spInvoice_View_Payments">
+    <Parameter Name="id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="isuserinvoice" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="totalpaid" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spInvoice_View_PaymentsResult">
+      <Column Name="Payment_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PaidDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="IsCleared" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ClearedDetails" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInvoice_View_ConsignorStatements" Method="spInvoice_View_ConsignorStatements">
+    <Parameter Name="consignment_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spInvoice_View_ConsignorStatementsResult">
+      <Column Name="Consignment_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EventTitle" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="FLName" Type="System.String" DbType="VarChar(220)" CanBeNull="true" />
+      <Column Name="Pending" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="APaid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ADue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Owner_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInvoice_View_InvoicesByCS" Method="spInvoice_View_InvoicesByCS">
+    <Parameter Name="consignment_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="amount" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="fee" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="cost" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="balance" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalrecords" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spInvoice_View_InvoicesByCSResult">
+      <Column Name="Invoice_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaymentStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CommissionRate" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAuction_View_UnsoldItems" Method="spAuction_View_UnsoldItems">
+    <Parameter Name="consignment_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalrecords" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spAuction_View_UnsoldItemsResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(510)" CanBeNull="true" />
+      <Column Name="AuctionStatus" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Reserve" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Estimate" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CurrentBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Bids" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAuction_View_SearchList" Method="spAuction_View_SearchList">
+    <Parameter Name="owner_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="old_auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="lot" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="etitle" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spAuction_View_SearchListResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OldAuction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="EventTitle" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="MainCategory_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(510)" CanBeNull="true" />
+      <Column Name="CommissionRate_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Reserve" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CopyNotes" Type="System.String" DbType="VarChar(2048)" CanBeNull="true" />
+      <Column Name="PhotoNotes" Type="System.String" DbType="VarChar(2048)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Estimate" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Addendum" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="IsLimitDisabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAuction_View_AuctionsForLS" Method="spAuction_View_AuctionsForLS">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="priority" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="sord" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="orderby" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spAuction_View_AuctionsForLSResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="PriorityDescription" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="ListedStep" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="CopyNotes" Type="System.String" DbType="VarChar(2048)" CanBeNull="true" />
+      <Column Name="IsLimitDisabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spEvent_Current" Method="spEvent_Current">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.spInvoice_View_UserInvoicesBE" Method="spInvoice_View_UserInvoicesBE">
+    <Parameter Name="invoice_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spInvoice_View_UserInvoicesBEResult">
+      <Column Name="UserInvoice_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EventTitle" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="FLName" Type="System.String" DbType="VarChar(220)" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LateFee" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="APaid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ADue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelect_AuctionResults" Method="spSelect_AuctionResults">
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Id="FunctionId3" Name="dbo.spUpdate_AuctionResults" Method="spUpdate_AuctionResults">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="CurrentBid" Parameter="currentBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Bids" Parameter="bids" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId11" Name="dbo.spUpdate_BidLogCurrent" Method="spUpdate_BidLogCurrent">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateMade" Parameter="dateMade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="IsProxy" Parameter="isProxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsProxyRaise" Parameter="isProxyRaise" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId5" Name="dbo.spUpdate_Bid" Method="spUpdate_Bid">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateMade" Parameter="dateMade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="IsProxy" Parameter="isProxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId9" Name="dbo.spUpdate_BidCurrent" Method="spUpdate_BidCurrent">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateMade" Parameter="dateMade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="IsProxy" Parameter="isProxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId7" Name="dbo.spUpdate_BidLog" Method="spUpdate_BidLog">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateMade" Parameter="dateMade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="IsProxy" Parameter="isProxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsProxyRaise" Parameter="isProxyRaise" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId2" Name="dbo.spInsert_AuctionResults" Method="spInsert_AuctionResults">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="CurrentBid" Parameter="currentBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Bids" Parameter="bids" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId10" Name="dbo.spInsert_BidLogCurrent" Method="spInsert_BidLogCurrent">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateMade" Parameter="dateMade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="IsProxy" Parameter="isProxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsProxyRaise" Parameter="isProxyRaise" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId4" Name="dbo.spInsert_Bid" Method="spInsert_Bid">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateMade" Parameter="dateMade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="IsProxy" Parameter="isProxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId8" Name="dbo.spInsert_BidCurrent" Method="spInsert_BidCurrent">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateMade" Parameter="dateMade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="IsProxy" Parameter="isProxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId6" Name="dbo.spInsert_BidLog" Method="spInsert_BidLog">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateMade" Parameter="dateMade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="IsProxy" Parameter="isProxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsProxyRaise" Parameter="isProxyRaise" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId1" Name="dbo.spInsert_BidWatch" Method="spInsert_BidWatch">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spInsert_EventRegistration" Method="spInsert_EventRegistration">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Event_ID" Parameter="event_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spBid_LogCount" Method="spBid_LogCount">
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spBid_LogCountResult">
+      <Column Name="LogCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelect_EventRegistration" Method="spSelect_EventRegistration">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.spBid_WinningBid" Method="spBid_WinningBid">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.spBid_UserTopBid" Method="spBid_UserTopBid">
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.spBid_BidsExceptCurrent" Method="spBid_BidsExceptCurrent">
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Bid_ID" Parameter="bid_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.sp_GetUsersSearchList" Method="sp_GetUsersSearchList">
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="login" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="hphone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="isroot" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="orderby" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="searhtype" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="sp_GetUsersSearchListResult">
+      <Column Name="User_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CommissionRate_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ShippingAddress" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInvoice_Refund" Method="spInvoice_Refund">
+    <Parameter Name="invoice_id" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spInvoice_RefundUserInvoice" Method="spInvoice_RefundUserInvoice">
+    <Parameter Name="userinvoice_id" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spInvoice_SellItemToBuyer" Method="spInvoice_SellItemToBuyer">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAuction_ForSaleList" Method="spAuction_ForSaleList">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="status_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="category" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="shipping" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="consignor" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="commrate" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spAuction_ForSaleListResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Reserve" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Consignor" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CommRate" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAuction_ItemsForSale" Method="spAuction_ItemsForSale">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="lot" Type="System.Int32" DbType="Int" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="owner_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spAuction_ItemsForSaleResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="Category_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="MainCategory_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addendum" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="CommissionRate_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Report_PrintedInvoices" Method="sp_Report_PrintedInvoices">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="printeddate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Report_PrintedInvoicesResult">
+      <Column Name="UserInvoice_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EventEndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventTitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="BuyerID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Buyer" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceDate" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="PrintedDate" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="BillingName" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="BillingAddress1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BillingAddress2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BillingCity" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BillingState" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BillingZip" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="BillingCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShippingName" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="ShippingAddress1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ShippingAddress2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ShippingCity" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ShippingState" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ShippingZip" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ShippingCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="LateFee" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AmountPaid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AmountDue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spImages_Homepage" Method="spImages_Homepage">
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="dbo.spAuction_View_ConsignmentAuctions" Method="spAuction_View_ConsignmentAuctions">
+    <Parameter Name="cons_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="sortbylot" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spAuction_View_ConsignmentAuctionsResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="FullCategoy" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommDescription" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CopyNotes" Type="System.String" DbType="VarChar(2048)" CanBeNull="true" />
+      <Column Name="PhotoNotes" Type="System.String" DbType="VarChar(2048)" CanBeNull="true" />
+      <Column Name="PriorityDescription" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Old_Inventory" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EnteredBy" Type="System.String" DbType="VarChar(510)" CanBeNull="true" />
+      <Column Name="CommRate_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MainCategory_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(510)" CanBeNull="true" />
+      <Column Name="IsAuctionPrinter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Old_Inventory_Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="ListingStep" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ListingStepDescription" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IsLimitDisabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PurchasedPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SoldPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PurchasedWay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoldWay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUser_GetBiddersForEventClose" Method="spUser_GetBiddersForEventClose">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spUser_GetBiddersForEventCloseResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInvoice_Detail_UserUnpaid" Method="spInvoice_Detail_UserUnpaid">
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spInvoice_Detail_UserUnpaidResult">
+      <Column Name="Invoice_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="LateFee" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Event_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EventTitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="EventCategory_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="MainCategory" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="UserInvoices_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetComissionForItem" Method="GetComissionForItem" IsComposable="true">
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Decimal" />
+  </Function>
+  <Function Name="dbo.spBid_View_BidLog" Method="spBid_View_BidLog">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spBid_View_BidLogResult">
+      <Column Name="Bid_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Bidder" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DateMade" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsProxy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsProxyRaise" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spBid_View_BidLogStatistics" Method="spBid_View_BidLogStatistics">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spBid_View_BidLogStatisticsResult">
+      <Column Name="BidsAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BidAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BuyersPremium" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spBid_View_AuctionBids" Method="spBid_View_AuctionBids">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="lot" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="currentbid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="bid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sort" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="order" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pageindex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pagesize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="totalamount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spBid_View_AuctionBidsResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lot" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="CurrentBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Bids" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAuction_View_Detail" Method="spAuction_View_Detail">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spAuction_View_DetailResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPulledOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Addendum" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventStartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventEndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventTitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Event_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CloseStep" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EventCategory_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="MainCategory_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="MainCategoryTitle" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryTitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="PrevAuction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PrevLot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PrevTitle" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="PrevMainCategoryTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PrevCategoryTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NextAuction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NextLot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NextTitle" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="NextMainCategoryTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NextCategoryTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PicturePath" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spBid_LotBids" Method="spBid_LotBids">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.spBid_PlaceBidsForSingleBidding" Method="spBid_PlaceBidsForSingleBidding">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="current_bid_id" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="current_user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="current_amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="current_maxbid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="current_datemade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="current_ip" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="current_isproxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="current_isproxyrase" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="current_isactive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="update_amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="update_maxbid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="update_datemade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prev_bid_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="prev_user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="prev_amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="prev_maxbid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="prev_datemade" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prev_datemadeforlot" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prev_ip" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="prev_isproxy" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="winner_user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="winner_amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="winner_maxbid" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdate_AuctionResultsCurrent" Method="spUpdate_AuctionResultsCurrent">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Auction_ID" Parameter="auction_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="CurrentBid" Parameter="currentBid" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Bids" Parameter="bids" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaxBid" Parameter="maxBid" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spBid_View_BidWatch" Method="spBid_View_BidWatch">
+    <Parameter Name="user_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spBid_View_BidWatchResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="AuctionStatus" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="HighBidder" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Bids" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MaxBid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsWatch" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EventTitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryTitle" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="MainCategoryTitle" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Auctions_GetAuctionListForPage" Method="sp_Auctions_GetAuctionListForPage">
+    <Parameter Name="auction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="evnt" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="lot" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="maincatory" Type="System.Int32" DbType="Int" />
+    <Parameter Name="category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="price" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="reserve" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="commrate" Type="System.Int32" DbType="Int" />
+    <Parameter Name="seller" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="shipping" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="prioritydescription" Type="System.Int32" DbType="Int" />
+    <Parameter Name="oldauction_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="enteredby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="specialist" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="highbidder" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="currentbid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tag_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="orderby" Type="System.Byte" DbType="TinyInt" />
+    <ElementType Name="sp_Auctions_GetAuctionListForPageResult">
+      <Column Name="Auction_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Event" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Lot" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MainCategory" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Reserve" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Estimate" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CommRate" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Seller" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Shipping" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PriorityDescription" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="LOA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PulledOut" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsUnsold" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OldAuction_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NotifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnteredBy" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Specialist" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="HighBidder" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CurrentBid" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tags" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetEventsList" Method="sp_GetEventsList">
+    <Parameter Name="event_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="datestart" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateend" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="buyerfee" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="description" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="closestep" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="orderby" Type="System.Byte" DbType="TinyInt" />
+    <ElementType IdRef="ID2" />
+  </Function>
+</Database>

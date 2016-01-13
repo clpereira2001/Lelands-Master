@@ -1,0 +1,11 @@
+button.cssbutton{border:0 none;cursor:pointer;margin:0;padding:0;position:relative; text-align:center}
+button.cssbutton span{display:block; cursor:pointer;white-space:nowrap;margin-left:4px; padding:0 10px 0 5px} 
+a.cssbutton{border:0 none;float:left;text-align:center;padding:0;margin:0;cursor:pointer;text-decoration:none}
+a.cssbutton span{display:block; float:left; white-space:nowrap; height:23px; margin-left:1px; padding:0 10px 0 9px}
+div.cssbutton{border:0; float:left; text-align:center; padding:0; margin:0; cursor:pointer}
+div.cssbutton input{border:0; font:bold 12px/23px Verdana; color:#666; display:block; cursor:pointer; float:left; white-space:nowrap; height:23px; margin-left:1px; padding:0 10px 0 9px}
+button.small span, a.small span, div.small input{color:#555;height:28px; line-height:28px; font:normal bold 13px/28px Verdana, Arial}
+button.cssbutton.small.white span, a.cssbutton.small.white span,div.cssbutton.small.white input{background:url("/Zip/Image?path=/public/images/small_white_right.png") no-repeat right 0 }
+button.cssbutton.small.white, a.cssbutton.small.white,div.cssbutton.small.white{background:url("/Zip/Image?path=/public/images/small_white_left.png") no-repeat 0 center }
+button.small.white:hover span, a.cssbutton.small.white:hover span, div.cssbutton.small.white:hover input{color:White;background:url("/Zip/Image?path=/public/images/small_white_right.png") no-repeat right 100%}
+button.cssbutton.small.white:hover,a.cssbutton.small.white:hover,div.cssbutton.small.white:hover{background:url("/Zip/Image?path=/public/images/small_white_left.png") no-repeat -237px center}

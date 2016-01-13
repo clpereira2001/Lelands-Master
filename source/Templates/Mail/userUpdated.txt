@@ -1,0 +1,13 @@
+﻿
+Dear {{loginName}}.
+
+You have ordered lot # {{auctionID}}, but haven't paid within 20 minutes.
+Your order was discarded.
+
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

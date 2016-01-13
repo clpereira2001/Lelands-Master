@@ -1,0 +1,174 @@
+*{margin:0 0 0 0;padding:0 0 0 0}
+html{height:100%}
+body{min-width:980px;max-width:985px;background:#000 url("/Zip/Image?path=/public/images/bg.jpg") repeat-x 0 0;color:#000;	margin:0 auto;font-family:Arial,Helvetica,sans-serif;font-size:100%;	padding:0}
+img{border:0}
+a, a:active, a:visited{color:#6C0202;font-size:12px;text-decoration:none;	}
+a:hover{text-decoration:underline}
+.bordered{border:1px solid #818181;padding-left:5px;vertical-align:middle}
+.bordered p,.bordered h4,.bordered a{vertical-align:middle}
+form{margin:0 0 0 0;padding:0 0 0 0;vertical-align:top;display:block;border:none}
+#wrapper{float:left;margin:0 auto;width:980px;	background-color:#FFFFFF;	/* IE6 */position:relative}
+#masthead{height:68px;margin-top:10px}
+#logo{padding:0px 0 0  19px;width:153px;height:68px;float:left}
+#top_block{margin-left:27px;float:left;font-size:12px}
+#slogan{font-weight:bold;width:510px;height:48px;float:left;padding-top:10px;	}
+#slogan b{color:#2a2a2a}
+#search_form{margin-left:10px;padding-top:5px;float:left;width:240px;height:58px}
+#search_form form{display:inline}
+#search_form select{width:122px;height:18px;border-left:1px solid #a8a8a8;border-top:1px solid #a8a8a8;border-right:1px solid #a8a8a8;border-bottom:1px solid #dfdad6;font-size:10px}
+#search_form input{width:156px;height:16px;border-left:1px solid #a8a8a8;border-top:1px solid #a8a8a8;border-right:1px solid #a8a8a8;border-bottom:1px solid #dfdad6;font-size:10px;position:relative;top:-1px;font-weight:bold;color:#C4BBBB;margin-left:5px}
+#search_form input.typing{color:Black}
+#search_form a{font-size:90%;font-weight:bold;display:inline}
+#register_links{font-size:14px;float:right;margin-top:10px}
+#register_links a{color:#be0405;font-weight:bold}
+ul#menu{height:44px;background:url("/Zip/Image?path=/public/images/menu/bg.png") repeat-x 0px 0px;font-family:"Lucida Grande", Verdana, sans-serif;font-weight:bold;list-style-type:none;margin:0px;padding:0px;float:left;cursor:pointer}
+ul#menu li{display:block;float:left;margin:0px;position:relative}
+ul#menu li a,ul#menu li a.current{color:#FFF;text-decoration:none;display:block;float:left;padding:14px 12px 11px 13px;margin:0 0 5px 0;font-size: 10px}    
+ul#menu li a.current{color:#3A0801;background:url("/Zip/Image?path=/public/images/menu/bg.png") repeat-x 0px -120px}
+ul#menu .drop_down{height:16px;padding:0 0 0 20px;margin:0;float:left;background:url('/Zip/Image?path=/public/images/menu/bg_drop_down.png') no-repeat left}
+ul#menu li span{display:block;float:left;padding:8px 1px 10px 1px;margin:0px 0px 5px 0px;//padding:10px 1px 10px 1px;width:2px;cursor:pointer;background:url('/Zip/Image?path=/public/images/menu/bg_separator.png') no-repeat center}
+ul#menu li ul{background:#e0e0e0;border-left:3px solid #AFAFAF;border-right:3px solid #AFAFAF;border-bottom:3px solid #AFAFAF;display:none;height:auto;filter:alpha(opacity=95);opacity:0.95;position:absolute;top:40px;width:200px;left:-27px;z-index:1000}
+ul#menu li ul li{display:block;padding:0px;position:relative;left:0px;width:200px;z-index:1000}
+ul#menu li ul li a{display:block;font-style:normal;padding:10px 0px 10px 10px;margin:2px 0px 2px 0px;text-align:left;color:#222222;vertical-align:bottom;width:190px;font-size:80%;z-index:1000}
+ul#menu li ul li a em{float:right;background:url('/Zip/Image?path=/public/images/menu/bg_arrow_right.png') no-repeat top left;margin-right:10px;width:10px;height:12px;z-index:1000;//display:none}
+ul#menu li ul li hr{border:dashed 1px #AFAFAF;padding:0px;width:95%;margin:0px 15px 0px 5px;background:#e0e0e0;z-index:1000}
+ul#menu table{background:#e0e0e0;border:3px solid #AFAFAF;display:none;filter:alpha(opacity=95);opacity:0.95;position:absolute;left:190px;//left:200px;top:8px;padding:0px;color:#222;z-index:10000}
+ul#menu li ul li table td a{font-size:80%;font-weight:bold;padding:0px 0px 0px 10px;margin:0px;line-height:24px;color:#000;width:388px;cursor:pointer;z-index:10000}
+ul#menu li ul li table td{padding:0px;margin:0px;cursor:default;z-index:10000}
+ul#menu li ul li table td a:hover{color:White;background:url('/Zip/Image?path=/public/images/menu/bg_sumbenu_selected.png') repeat-x left}
+#top_menu{height:45px;margin:20px 0px 0px 0px;background:url('/Zip/Image?path=/public/images/menu/bg.png') repeat-x 0px 0px}
+.main_img{width:100%;	margin:0px 0 0px 0;text-align: center;padding-top: 5px;}
+.image_container{float:left;margin-top:0px}
+#content{width:980px;margin:0px;float:left}
+#left_column{width:200px;text-align:left;float:left;margin:10px 0px 0px 10px;padding:0px}
+.small_img{float:left;width:320px;height:150px;margin-left:3px;margin-right:2px;text-align:center;vertical-align:top}
+.middle{margin:0 11px 0 11px}
+#footer{width:100%;font-size:70%;margin-top:20px;text-align:center;color:#424242;float:left}
+.footer_upper_border{height:10px;background-color:#A80101;margin-bottom:10px}
+.footer_lower_border{height:5px;background-color:#A80101;margin-bottom:10px}
+#footer ul{text-align:left;	margin-left:16px}
+#footer .footer_item li.first{color:black;font-weight:bold;list-style-type:none;list-style-image:none}
+#footer li{list-style-image:url('/Zip/Image?path=/public/images/list_style.png')}
+#footer li a{	color:#424242}
+.footer_wrapper{width:750px;margin:0 auto;height:160px}
+.footer_wrapper_address{margin:0 auto;height:70px;font-size:12px}
+.footer_item{float:left;width:150px}
+.footer_item h4{color:#6C0202;font-weight:bold;font-size:100%;text-align:left;margin-bottom:5px}
+.top_delim{	background-color:#97aebc;	height:38px}
+.info_msg{color:#811302;font-weight:bold;	font-size:14px}
+#new_customer{width:300px;border:1px solid red;float:left;border:1px solid #f7f7f7;	padding:10px 5px 10px 5px}
+h4{font-size:90%}
+#content p{font-size:14pt}
+#content input{}
+.f_s_100{	font-size:80% !important}
+.description{font-size:14px;font-weight:normal}
+a.forgot, a.forgot:active, a.forgot:visited{color:#6990af;font-size:100%;text-decoration:underline}
+a.forgot:hover{text-decoration:none}
+.padding_top_50{padding-top:50px}
+.w_30{width:30px !important}
+.w_50{width:50px !important}
+.w_60{width:60px !important}
+.w_80{width:80px !important}
+.w_90{width:90px !important}
+.w_150{width:150px !important}
+.w_210{width:210px !important}
+.top_4{position:relative;top:4px}
+.w_250{width:250px !important}
+.padding_l{	padding-left:40px}
+.dbg, .dbg *{	border:solid 1px red;	}
+.top_delim{background-color:#97AEBC;height:38px}
+h4{color:#616161;font-size:14px;font-weight:bold}
+.p_t_10{padding-top:10px}
+.p_t_30{padding-top:30px}
+#rememberMe{width:10px !important;margin-left:10px}
+.description_text{float:right;width:260px;padding-left:5px;padding-bottom:5px;text-align:justify;color:#580B01}
+.w_180{width:180px !important}
+.full_page{padding:0px 20px 20px 20px;text-align:justify}
+.text1{clear:both;font-size:12px;text-align:justify}
+.p_l_20{padding-left:20px}
+.p_l_10{padding-left:10px !important}
+.button_right{text-align:right}
+#register_links p{font-size:12px;text-align:center}
+#slogan p{color:#5A5A5A}
+#slogan b{color:black}
+.td_h_30{height:30px !important}
+h4.bid_details{color:#BE0405}
+#main_image{max-height:700px}
+.RootCatLink{font-size:18px !important;color:#5A5A5A !important}	
+.SubCatLink{font-size:14px !important}
+.siteMapLine{}
+.siteMapItem{float:left;border:1px solid #818181;width:150px;height:150px}
+.siteMapMenu{float:left;width:150px}
+.lot_title{color:#CB0405;font-size:16px;font-weight:bold}
+#auction_detailed,#auction_bidding{background-color:#F0F0F0}
+#auction_detailed{border-collapse:collapse;border:none}
+td.image_td{vertical-align:middle;text-align:center}
+td.img_scroller{vertical-align:top;height:500px}
+td.img_scroller a img{margin:0 0 0 0 !important;padding:0 0 0 0 !important}
+.descr_bidding_param{width:140px;float:left}
+.category_list_main{list-style:none;margin:0px;padding:0px}
+.category_list_header{background:url('/Zip/Image?path=/public/images/menu/bg.png') repeat-x 0px -5px;color:#FFF;font-size:70%;font-weight:bold;text-align:center;padding:5px 15px 5px 5px;margin-bottom:0px}
+.category_list_header_container{margin-right:10px;cursor:default}
+.category_list_footer{background:url('/Zip/Image?path=/public/images/menu/bg.png') repeat-x 0px -5px;cursor:default;margin-top:0px;height:15px;margin-right:10px}
+.category_list_head{color:#000;cursor:pointer;margin-left:0px;margin-right:10px;margin-top:0px;padding:3px 0px 3px 5px;font-size:70%;font-weight:bold;background:url('/Zip/Image?path=/public/images/dow-desc-bg.jpg') repeat-x left}
+.category_list_head:hover{background:url('/Zip/Image?path=/public/images/menu/bg.png') repeat-x 0px -62px;color:white}
+.category_list_head img{vertical-align:middle}
+.category_list_body{font-size:70%;padding:0px 0px 5px 10px;margin-left:0px;margin-right:10px;margin-top:0px;border-left:solid 1px #c4c4c4;border-right:solid 1px #c4c4c4;border-bottom:solid 1px #c4c4c4;display:none;background-color:#EFEFEF}
+.category_list_body ul{padding:0px;margin:0px 0px 0px 5px;list-style:square}
+.category_list_body li{padding:0px;margin:0px 0px 0px 0px;color:#000;cursor:pointer}
+.category_list_body a{padding:0px 5px 0px 5px;color:#000000;text-decoration:none}
+.category_list_body li:hover{background:url('/Zip/Image?path=/public/images/menu/bg.png') repeat-x 0px -62px}
+.category_list_body li:hover a{color:#FFF}
+.category_list_body font{font-size:100%;color:#800000}
+.category_list_body li:hover font{color:#FFFF80}
+#item_view{font-size:12px !important}
+#item_view a{color:#000}
+#table_grid{table-layout:fixed}
+#table_grid td{vertical-align:baseline;text-align:center;padding:5px;margin:5px}
+#table_grid_div_description{width:170px;text-align:center;margin-left:5px;margin-right:5px;font-size:12px}
+#table_grid_div_description a{font-size:12px;font-weight:bold}
+#table_grid_div_description span{color:#424242}
+.page_title{color:#6C0202;font-size:16px;font-weight:bold;margin:20px 0px 20px 0px}
+#logon_table td{vertical-align:top}
+.past_categories_menu{font-family:"Lucida Grande", Verdana, sans-serif;list-style-type:none;margin:0px;padding:0px;float:left;//z-index:1}
+.past_categories_menu li{display:block;float:left;margin:0px;position:relative;cursor:default;//z-index:1}
+.past_categories_menu li a{color:#FFF;text-decoration:none;display:block;float:left;padding:0px;margin:0px 20px 0px 20px;//z-index:1}
+.past_categories_menu li ul{background:#e0e0e0;border:2px solid #AFAFAF;display:none;height:auto;filter:alpha(opacity=95);opacity:0.95;position:absolute;top:20px;width:150px;left:-23px;z-index:2}
+.past_categories_menu li ul li{display:block;padding:0px;position:relative;left:0px;width:150px;//z-index:2}
+.past_categories_menu li ul li a{display:block;font-size:12px;font-style:normal;padding:0px 0px 0px 10px;margin:0px 0px 0px 0px;text-align:left;color:#222222;vertical-align:bottom;width:140px;//z-index:2}
+.past_categories_menu table{background:#e0e0e0;border:2px solid #AFAFAF;display:none;	filter:alpha(opacity=95);opacity:0.95;position:absolute; left:130px;//left:150px;top:0px;padding:0px;color:#222;z-index:70}
+.past_categories_menu li ul li table td a{font-size:12px;font-weight:normal;padding:2px 0px 2px 10px;	margin:0px;	line-height:14px;color:#000;width:300px;cursor:pointer;//z-index:3}
+.past_categories_menu li ul li table td{padding:0px;margin:0px;cursor:default;//z-index:3}
+.past_categories_menu li ul li table td a:hover{color:White;background:url('/Zip/Image?path=/public/images/menu/bg_sumbenu_selected.png') repeat-x left}
+.custom_button{background:url('/Zip/Image?path=/public/images/button/button_left.png') no-repeat left;height:28px;padding:0px 0px 0px 5px;text-align:left}
+.custom_button:hover{background:url('/Zip/Image?path=/public/images/button/button_left_hover.png') no-repeat left}
+.custom_button button{cursor:pointer;border:none;padding:0px;background:url('/Zip/Image?path=/public/images/button/button_right.png') no-repeat right;padding:2px 10px 2px 5px;height:28px;color:#555;font-weight:bold}
+.custom_button button:hover{background:url('/Zip/Image?path=/public/images/button/button_right_hover.png') no-repeat right;color:#000}
+#tooltip{position:absolute;border:1px solid #ccc;background:#333;padding:1px;color:#fff;text-align:center}
+#tooltip img{width:400px;height:400px;margin:0px}
+.slideshow{position:relative;padding:0;margin:0}
+.slideshow .buttons{display:block;position:absolute;z-index:20;left:0px;bottom:10px;margin:0}
+.slideshow .buttons li{float:left;display:inline;width:38px;height:38px;margin:10px -5px 3px 5px;padding-left:11px;line-height:40px;background-image:url('/Zip/Image?path=/public/images/button_link.png');background-repeat:no-repeat;padding:0px}
+.slideshow .buttons li a{text-decoration:none;font-weight:bold;color:#330303;outline:0;width:35px;height:35px}
+.slideshow ul.buttons li a:hover{text-decoration:none;color:#FFF}
+.slideshow ul.buttons li.active a:hover, .slideshow ul.buttons li.active a{color:#FFF}
+#categories_tree span, #categories_menu li loading{color:#6C0202;font-size:12px;font-weight:bold}
+#categories_tree span{margin:40px 0 0 60px}
+#categories_tree span img, #categories_menu li loading img{width:32px;height:32px;vertical-align:middle}
+#categories_tree span img{margin-left:70px}
+.attention_text a{color:Red;font-weight:bold}
+#auctiondetail_uppertable{table-layout:fixed}
+#auctiondetail_uppertable td{vertical-align:top}
+.pay_notice{border:dotted 1px #800000;color:#800000;padding:5px 2px 5px 5px;margin:10px 0;width:740px}
+.items_notice{border:dotted 1px navy;color:navy;padding:5px;margin:10px 0;width:740px;text-align:justify;font-size:12px}
+.lot_description{font-size:13px;background-color:#ADC0AE;text-align:justify;padding:10px}
+.back_link{float:right;padding-top:20px}
+.span_link{color:#6C0202;font-size:12px;text-decoration:underline;cursor:pointer}
+#btn_ad_register{background:url('/Zip/Image?path=/public/images/button/register_for_event.png') no-repeat 0 0;width:140px;height:30px;display:block}
+#btn_ad_register:hover{background-position:0 -30px}
+#btn_ad_watchlist{background:url('/Zip/Image?path=/public/images/button/watch_list_new.png') no-repeat 0 0;width:136px;height:30px;display:block}
+#btn_ad_watchlist:hover{background-position:0 -30px}
+#btn_ad_placebid{background:url('/public/images/button/place_bid_new.png') no-repeat 0 0;width:136px;height:30px;display:block}
+#btn_ad_placebid:hover{background-position:0 -30px}
+.ad_pe_notif{color:#800}
+.ad_notif{color:#004;font-style:italic;font-size:12px;text-align:justify}

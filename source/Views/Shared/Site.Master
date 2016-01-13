@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Vauction.Utils.Perfomance" %>
+<%@ Import Namespace="Vauction.Utils" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>  
+    <title>Lelands</title>
+  <meta name="robots" content="NOODP" />
+  <meta name="description" content="Lelands.com is the industry leader in sports and americana memorabilia. When it comes to quality material and prices realized, we are second to none." />
+  <meta name="keywords" content="lelands auction,leland auction,sports memorabilia auction,sports auction,vintage sport auction,vintage sports equipment,vintage sports,game used equipment,antique sports,memorabilia,sport memorabilia, sports memorabilia,vintage baseball,baseball,baseball cards,trading cards,old baseball cards,sports cards,baseball collections,buy antique,collectable,collectible,antiques,sports art,antique signs,old advertising,vintage Disney,sports jewelry,antique baseball watch,championship ring,sports trophy,music memorabilia,original photographs, negro league,new york yankees,football,hockey,boxing,sports legends,vintage photography,photography auction,americana,wire photo,game used jerseys,babe ruth,lou gehrig,ted williams,willie mays,roberto clemente,jackie robinson,mickey mantle,pete rose,derek jetet,stan musial,cassius clay,muhammad ali,jack johnson,bobby orr,guy lafleaur,wilt chamberlain,larry bird,michael jordan,shaq,stadium equipment,autographed baseball,game used bats, autographed bats,consign,consignments,heisman,leroy neiman,photo archive,new york yankees,boston red sox,brooklyn dodgers,toleteros, toleteros cards,rookie cards,latin baseball,vintage music,music memorabilia,comics,vintage comics,mad magazine,playboy,marilyn munroe,jfk,presidential memorabilia,kentucky derby,pop culture,pulitzer prize winners,joe namath,dan marino,nai smith,red grange,chamionship belts,boxing robes,boxing trunks,ty cobb,cy young,jim thorpe,19th century baseball,dead ball era,topps,bowman,tobacco cards,lil abner,coin op machines,cooperstown,baseball hall of fame,beatles memorabila,beatles,elvis presley" />		    
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />  
+  <link rel="shortcut icon" href="<%=AppHelper.CompressImagePath("/favicon.ico") %>" />
+  <link rel="icon" type="image/gif" href="<%=AppHelper.CompressImagePath("/animated_favicon.gif") %>" />
+  <link rel="apple-touch-icon" href="<%=AppHelper.CompressImagePath("/apple-touch-icon.png") %>" />
+  
+  <!--[if IE 6]>
+    <link href="<%= this.ResolveUrl("~/public/scripts/IE7.js") %>" rel="stylesheet" type="text/css">    
+  <![endif]-->
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script type="text/javascript">if (typeof jQuery == 'undefined') {document.write(unescape("%3Cscript src='<%=AppHelper.ScriptUrl("jquery-1.4.4.min.js") %>' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+<% Html.Style("reset.css"); %>
+  <% Html.Style("screen.css"); %>
+  <% Html.Style("grid.css"); %>  
+  <% Html.Style("main.css"); %>
+  <% Html.Style("forms.css"); %>
+  <% Html.Style("widgets.css"); %>
+
+  <link href="<%=this.ResolveUrl("~/public/css/reset.css") %>" rel="stylesheet" type="text/css" />
+  <link href="<%=this.ResolveUrl("~/public/css/screen.css") %>" rel="stylesheet" type="text/css" />
+  <link href="<%=this.ResolveUrl("~/public/css/grid.css") %>" rel="stylesheet" type="text/css" />
+  <link href="<%=this.ResolveUrl("~/public/css/main.css") %>" rel="stylesheet" type="text/css" />
+  <link href="<%=this.ResolveUrl("~/public/css/forms.css") %>" rel="stylesheet" type="text/css" />
+  <link href="<%=this.ResolveUrl("~/public/css/widgets.css") %>" rel="stylesheet" type="text/css" />
+  <%--<% if (Request.Browser.Browser == "IE") Html.Style("ie.css"); %>--%>
+  
+  <% Html.ScriptUrl("http://www.google-analytics.com/ga.js"); %>
+  
+  <asp:ContentPlaceHolder ID="HTMLhead" runat="server"></asp:ContentPlaceHolder>
+  
+  <%= Html.CompressJs(Url) %>
+  <%= Html.CompressCss(Url) %>
+  <% Html.Clear(); %>  
+
+  <% if (Request.Browser.Browser == "IE") { %> <link rel="stylesheet" type="text/css" href="/public/css/ie.css" /> <%} %>
+</head>
+<body>
+  <% decimal version; bool isIE6 = (Decimal.TryParse(Request.Browser.Version, out version) && version < 7 && Request.Browser.Browser == "IE");%>  
+  <div id="wrapper">
+    <div id="masthead">
+      <div id="logo">
+        <a href="/Home/Index">
+          <% if (isIE6) { %>
+              <img id="imgLogo0" src="<%=AppHelper.CompressImage("logo.png") %>" width="153" height="68" alt="" />
+          <%} else { %>
+             <img id="imgLogo" src="<%=AppHelper.CompressImage("logo.png") %>" width="153" height="68" alt="" />
+          <%} %>
+        </a>
+      </div>
+      <div id="top_block">
+        <div id="slogan">
+          <p style='padding-top:10px'>
+            Specializing in <b>Sports</b>&nbsp;&&nbsp;<b>Americana&nbsp;Memorabilia</b>,<br />
+            <b>Vintage Photography</b>&nbsp;&&nbsp;<b>Rock 'n' Roll</b>.</p>
+        </div>
+        <div id="search_form" style="text-align: right;">
+          <% Html.RenderPartial("SearchControl"); %>
+          <br class="clear" />
+          <div id="register_links" style="float: right; padding-right: 0px;">          
+            <%  Html.RenderPartial("UserDeckControl");  %>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <div class="main_menu">      
+    <% Html.RenderPartial("TopMenuControl"); %>
+    </div>
+    <div id="content">
+      <asp:ContentPlaceHolder ID="leftImg" runat="server" />
+      <asp:ContentPlaceHolder ID="subMenu" runat="server" />
+      <asp:ContentPlaceHolder ID="head" runat="server" />
+      <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+
+    <% if (isIE6){ %>
+    <div id="ie6_message"  >You are using Internet Explorer 6. Please update your browser to increase safety and your browsing experience.&nbsp;<%= Html.ActionLink("read more ...", "UpdateBrowser", "Home")%></div>
+   <%} %>
+    <% Html.RenderPartial("FooterPanel"); %>
+  </div>  
+  
+  <%= Html.CompressJs(Url) %>
+  <%= Html.CompressCss(Url) %>
+
+  <asp:ContentPlaceHolder ID="cphJS" runat="server" />  
+  
+  <% if (!isIE6) { %>
+  <script type="text/javascript">
+    $("#imgLogo").attr('src', '<%=AppHelper.CompressImage("logo.png") %>');
+  </script>
+  <% } %>
+    
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-169400-10");
+      pageTracker._setDomainName(".lelands.com");
+      pageTracker._trackPageview();
+    } catch (err) { }
+  </script>
+
+  <script type="text/javascript" id="wau_scr_37e83000">
+    var wau_p = wau_p || []; wau_p.push(["65cu", "37e83000", false]);
+    (function () {
+      var s = document.createElement("script"); s.type = "text/javascript";
+      s.async = true; s.src = "http://widgets.amung.us/a_pro.js";
+      document.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script>
+
+<input type="hidden" id="sip" value="<%=AppHelper.CurrentUser != null ? AppHelper.CurrentUser.IP : "---"%>" />
+  <input type="hidden" id="cip" value="<%=Request.UserHostAddress %>" />
+
+  <div style="background-color:#fff;border:1px solid #c80000;color:#c80000;margin:10px;padding:5px">
+    <span style="font-weight:bold">SessionID:</span> <%=Session.SessionID %><br />
+    <span style="font-weight:bold">IsNewSession:</span> <%=Session.IsNewSession %><br />
+    <span style="font-weight:bold">IsReadOnly:</span> <%=Session.IsReadOnly %><br />
+    <span style="font-weight:bold">IsSynchronized:</span> <%=Session.IsSynchronized %><br />
+    <span style="font-weight:bold">Mode:</span> <%=Session.Mode %><br />
+    <span style="font-weight:bold">Timeout:</span> <%=Session.Timeout %><br />    
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Information about your auction invoice
+
+DO NOT RESPOND TO THIS MESSAGE DIRECTLY AS YOUR MESSAGE
+WILL BE RETURNED. IF YOU HAVE RECEIVED THIS MESSAGE IN
+ERROR, PLEASE CONTACT US AT THE ADDRESS SPECIFIED BELOW.
+
+{{firstName}} {{lastName}},
+
+You can preview your invoice online under your account information.
+In addition, a hard copy has also been mailed to your billing address.
+
+Follow this link to preview your online invoice
+{{siteUrl}}/Account/InvoiceDetailed/{{invoice_id}}/June-2010-Catalog
+
+Thank you for participating in the auction.
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}
+Copyright {{copyrightDate}} {{CompanyName}}

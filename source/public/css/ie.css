@@ -1,0 +1,29 @@
+* html .column{overflow-x:hidden}
+* html legend{margin:-18px -8px 16px 0; padding:0}
+ol{margin-left:2em}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+html>body p code{*white-space:normal}
+hr {margin:-8px auto 11px}
+.ie_pos_m3{position:relative;top:-8px}
+select{height:20px}
+input{height:16px}
+.clear{clear:both;width:1px}
+.text1{margin-left:5px !important}
+button.cssbutton{width:10px;z-index:1}
+button.cssbutton span{vertical-align:middle;float:left;position:static;top:1px;z-index:1}
+.ie_btn_fix button.cssbutton span{top:7px}
+.ie_btn_fix button.cssbutton{top:0px}
+button#btSubmit.cssbutton.small.white{width:60px;padding:0;margin:0}
+button#btSubmit.cssbutton.small.white.register{width:100px;padding:0;margin:0}
+button#btSubmit.cssbutton.small.white span{left:-1px}
+button.cssbutton.small.white.preview{width:80px}
+button#Itakeit{width:93px}
+button.submit_payment{margin-top:20px;width:150px}
+button.place_bid{width:90px}
+.button_ie{width:100px !important}
+#left_column{-margin-left:0px}
+.center_content{-margin-left:5px;-padding:0;-width:748px}
+.pay_notice{-margin-left:20px}
+#ie6_message{width:100%;margin:5px 0 -5px 0;padding:3px 1px;font-size:12px;background-color:#800;color:#FFF;font-weight:bold;text-align:center}
+#ie6_message a{text-decoration:underline;color:#EEE;cursor:pointer}

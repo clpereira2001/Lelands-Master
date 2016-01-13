@@ -1,0 +1,151 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Vauction.Utils.Perfomance" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">  
+  <link rel="shortcut icon" href="<%=AppHelper.CompressImagePath("/favicon.ico") %>" />
+  <link rel="icon" type="image/gif" href="<%=AppHelper.CompressImagePath("/animated_favicon.gif") %>" />
+  
+  <link href="/content/site.css" rel="stylesheet" type="text/css" />
+  <%--<% Html.Style("site.css"); %>--%><%--<link href="/content/site.css" rel="stylesheet" type="text/css" />--%>
+  <% Html.StyleUrl("/content/menu/menu_style.css"); %>
+  <% Html.StyleUrl("/content/redmond/jquery-ui-1.7.1.custom.css"); %>
+  <% Html.Style("ui.jqgrid.css"); %>  
+  <%--<% Html.Script("jquery-1.4.1.min.js"); %>--%>
+  <% Html.Script("jquery-1.3.2.min.js"); %>  
+  <% Html.Script("jquery-ui-1.7.2.custom.min.js"); %>
+  <% Html.Script("grid.locale-en.js"); %>
+  <% Html.Script("jquery.jqGrid.min.js"); %>
+  <% Html.Script("MicrosoftAjax.js"); %>
+  <% Html.ScriptV("general.js"); %>
+    
+  <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+
+  <%= Html.CompressJs(Url) %>
+  <%= Html.CompressCss(Url) %>
+  <% Html.Clear(); %>
+</head>
+
+<body>
+  <div class="page">
+    <% if (AppHelper.CurrentUser!=null)
+       { %>
+    <div id="header">
+      <div id="menucontainer">
+        <ul class="cssMenu cssMenum0" style="width:100%;height: 32px; background-color:#000; background-image: url('/Zip/Image?path=/Content/menu/images/btn3.jpg');background-repeat: repeat-x;  ">          
+          <li class="cssMenui0"><%=Html.ActionLink("Home", "Index", "Home", new { controller = "Home", action = "Index" }, new { @class = "cssMenui0" })%></li>                
+          <% if (!AppHelper.CurrentUser.IsWriter) {%>
+          <li class="cssMenui0"><%=Html.ActionLink("Users", "Users", "User", new { controller = "User", action = "Users" }, new { @class = "cssMenui0" })%></li>
+          
+          <% if (AppHelper.CurrentUser.ID == 21254)
+             { %>
+          <li class="cssMenui0"><%= Html.ActionLink("Categories", "Categories", "Category", new {controller = "Category", action = "Categories"}, new {@class = "cssMenui0"}) %></li>
+          <% } %>
+          
+          <li class=" cssMenui0"><a class="cssMenui0" href="#"><span>Events</span></a>
+            <!--[if lte IE 6]><table><tr><td><![endif]-->
+            <ul class=" cssMenum">
+             <li class="cssMenui"><%= Html.ActionLink("Events", "Events", "Event", new { controller = "Event", action = "Events" }, new { @class = "cssMenui" })%></li>
+              <%--<% if (AppHelper.CurrentUser != null && AppHelper.CurrentUser.IsRoot)
+               {  %>--%>
+              <li class="cssMenui"><%= Html.ActionLink("Events Managment", "EventManagment", "Event", new { controller = "Event", action = "EventManagment" }, new { @class = "cssMenui" })%></li>
+              <%--<%} %>--%>
+              <li class="cssMenui"><%= Html.ActionLink("Events Registrations", "EventRegistrations", "Event", new { controller = "Event", action = "EventRegistrations" }, new { @class = "cssMenui" })%></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+          </li>
+           
+          <li class=" cssMenui0"><a class="cssMenui0" href="#"><span>Auction</span></a>
+            <!--[if lte IE 6]><table><tr><td><![endif]-->
+            <ul class=" cssMenum">
+              <li class="cssMenui"><%= Html.ActionLink("Auctions", "Auctions", "Auction", new { controller = "Auction", action = "Auctions" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%= Html.ActionLink("Consignor Auction Listing", "Consignors", "Auction", new { controller = "Auction", action = "Consignors" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%= Html.ActionLink("Batch Images Upload", "BatchImagesUpload", "Image", new { controller = "Image", action = "BatchImagesUpload" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%= Html.ActionLink("Collections", "Collections", "Auction", new { controller = "Auction", action = "Collections" }, new { @class = "cssMenui" })%></li>
+              <%--<li class="cssMenui"><%= Html.ActionLink("Items For Sale", "ForSale", "Auction", new { controller = "Auction", action = "ForSale" }, new { @class = "cssMenui" })%></li>--%>
+              <%--<li class="cssMenui"><%= Html.ActionLink("Bid Log Preview", "BidLog", "Auction", new { controller = "Auction", action = "BidLog" }, new { @class = "cssMenui" })%></li> --%>      
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+           </li>
+          
+         <li class=" cssMenui0"><a class="cssMenui0" href="#"><span>Billing</span></a>
+            <!--[if lte IE 6]><table><tr><td><![endif]-->
+            <ul class=" cssMenum">
+              <li class="cssMenui"><%= Html.ActionLink("Buyer Invoices", "BuyerInvoices", "Invoice", new { controller = "Invoice", action = "BuyerInvoices" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%= Html.ActionLink("Consignor Statements", "ConsignorStatements", "Invoice", new { controller = "Invoice", action = "ConsignorStatements" }, new { @class = "cssMenui" })%></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+          </li>
+          
+          <li class=" cssMenui0"><a class="cssMenui0" href="#"><span>General</span></a>
+            <!--[if lte IE 6]><table><tr><td><![endif]-->
+            <ul class=" cssMenum">
+              <li class="cssMenui"><%= Html.ActionLink("General", "General", "General", new { controller = "General", action = "General" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%= Html.ActionLink("Email Images", "EmailImages", "Image", new { controller = "Image", action = "EmailImages" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%= Html.ActionLink("Home Page Images", "HomepageImages", "Image", new { controller = "Image", action = "HomepageImages" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%= Html.ActionLink("Cache managment", "Index", "Cache", new { controller = "Cache", action = "Index" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%= Html.ActionLink("Consignment Contract Template", "ConsignmentContractTemplate", "General", new { controller = "General", action = "ConsignmentContractTemplate" }, new { @class = "cssMenui" })%></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+           </li>
+           
+           <% if (AppHelper.CurrentUser.IsRoot){%>
+          <li class="cssMenui0"><a class="cssMenui0" href="#"><span>Reports</span></a>
+            <!--[if lte IE 6]><table><tr><td><![endif]-->
+            <ul class=" cssMenum">              
+              <li class="cssMenui"><%= Html.ActionLink("Auction Paid", "AuctionPaid", "Report", new { controller = "Report", action = "AuctionPaid" }, new { @class = "cssMenui" })%></li>
+               <li class="cssMenui"><%= Html.ActionLink("Buyer Invoices", "BuyerInvoices", "Report", new { controller = "Report", action = "BuyerInvoices" }, new { @class = "cssMenui" })%></li>
+              <% if (AppHelper.CurrentUser.ID == 21254)
+                 { %>
+                <li class="cssMenui">
+                  <%= Html.ActionLink("Consignor Settlement", "ConsignorSettlementReport", "Report", new {controller = "Report", action = "ConsignorSettlementReport"}, new {@class = "cssMenui"}) %></li>
+                <li class="cssMenui"><%=Html.ActionLink("Consignor Statement (p)", "PrintedConsignorStatements", "Report", new { controller = "Report", action = "PrintedConsignorStatements" }, new { @class = "cssMenui" })%></li>              
+              <% } %>
+              <li class="cssMenui"><%=Html.ActionLink("Daily Payments", "DayPayments", "Report", new { controller = "Report", action = "DayPayments" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%=Html.ActionLink("Invoices (p)", "PrintedInvoices", "Report", new { controller = "Report", action = "PrintedInvoices" }, new { @class = "cssMenui" })%></li>
+              <li class="cssMenui"><%=Html.ActionLink("Sales Tax", "SalesTax", "Report", new { controller = "Report", action = "SalesTax" }, new { @class = "cssMenui" })%></li>
+              <% if (AppHelper.CurrentUser.ID == 21254)
+                 { %>
+              <li class="cssMenui"><%= Html.ActionLink("Consignors vs Lelands", "ConsignorsVsLelands", "Report", new {controller = "Report", action = "ConsignorsVsLelands"}, new {@class = "cssMenui"}) %></li>              
+              <% } %>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+          </li>
+          <%} %>
+          <%} else { %>
+            <li class="cssMenui0"><%=Html.ActionLink("Description", "ItemsDescription", "Auction", new { controller = "Auction", action = "ItemsDescription" }, new { @class = "cssMenui0" })%></li> 
+          <%} %>
+
+          <li class="cssMenui0"><%= Html.ActionLink("Log Off", "LogOff", "Account", new { controller = "Account", action = "LogOff" }, new { @class = "cssMenui0" })%></li>          
+        </ul>
+      </div>
+     </div>
+    <%} %>
+    <div id="main">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+  </div>
+  
+  <asp:ContentPlaceHolder ID="jsContent" runat="server" />  
+  <%= Html.CompressJs(Url) %>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('button').addClass("ui-button ui-state-default"); //ui-corner-all
+      $('button').hover(
+		  function () {
+		    $(this).addClass("ui-state-hover");
+		  },
+		  function () {
+		    $(this).removeClass("ui-state-hover");
+		  }
+	    ).mousedown(function () {
+	      $(this).addClass("ui-state-active");
+	    })
+	    .mouseup(function () {
+	      $(this).removeClass("ui-state-active");
+	    });      
+    });
+  </script>
+</body>
+</html>

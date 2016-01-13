@@ -1,0 +1,12 @@
+﻿Successful Bid on Deal of The Week
+Dear {{loginName}}.
+
+You have successfully placed your bid on  lot # {{auctionID}}
+This auction is Deal of the Week and you've got 20 minutes to pay, otherwise the order will be discarded.
+
+Thank you,
+{{siteName}}
+{{siteUrl}}
+{{siteEmail}}
+
+{{copyrightDate}} {{CompanyName}}, {{CompanyAddress}}, {{companyCity}}, {{companyState}} {{companyZip}}

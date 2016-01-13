@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="DevLel" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Alan\\Desktop\\SPA_TFS\\esportsdna\\Lelands-Master\\Lelands\\Lelands-master\\source_be\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Alan\\Desktop\\SPA_TFS\\esportsdna\\Lelands-Master\\Lelands\\Lelands-master\\source_be\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="LelandsConnectionString-Web.config Connection String" description="" value="data source=tcp:cg5q1ennf1.database.windows.net,1433;initial catalog=DevLel_db;user id=Lelands@cg5q1ennf1;password=Devm0123;MultipleActiveResultSets=true" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Alan\\Desktop\\SPA_TFS\\esportsdna\\Lelands-Master\\Lelands\\Lelands-master\\source_be\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LelandsConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
